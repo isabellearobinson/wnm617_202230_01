@@ -1,0 +1,180 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+
+/* basic elements */
+html {
+	margin: 0;
+	padding: 0;
+	}
+body { 
+    font-family: Avenir Next, Helvetica, sans-serif;
+    background: url("images/background.jpeg");
+    background-repeat: no-repeat;
+  	background-size: cover;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+p { 
+	font: 'Avenir Next', sans-serif;
+	margin-top: 0; 
+	text-align: justify;
+	}
+
+h2 { 
+	font: 'Poppins', sans-serif;
+	letter-spacing: 1px; 
+	margin-bottom: 0; 
+	color: #474445;
+	font-weight: normal;
+	}
+
+h3 { 
+	font: 'Poppins', sans-serif;
+	font-size: 22px;
+	letter-spacing: 1px; 
+	margin-bottom: 0; 
+	color: #f777a9;
+	}
+
+
+
+a:link { 
+	font-weight: bold; 
+	text-decoration: underline; 
+	color: #B7A5DF;
+	}
+a:visited { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #D4CDDC;
+	}
+a:hover, a:focus, a:active { 
+	text-decoration: none; 
+	color: #000;
+	}
+abbr {
+	border-bottom: none;
+	}
+
+
+/* specific divs */
+.page-wrapper { 
+	background: url(jpg) no-repeat top left; 
+	padding: 0 175px 0 110px;  
+	margin: 0; 
+	position: relative;
+	}
+
+.intro { 
+	min-width: 470px;
+	width: 100%;
+	}
+
+header {
+	padding-top: 20px;
+	height: 200px;
+}
+
+.summary {
+	clear: both; 
+	margin: 40px 40px 40px 10px; 
+	width: 280px; 
+	padding: 20px;
+	float: left;
+    box-shadow:  0 0 10px rgba(0,0,0,0.1);
+    background-color: white;
+	}
+.summary p {
+	font: 1.1em/2.2 Poppins; 
+	text-align: center;
+	color: #79aef2;
+	font-size: 18px;
+	font-weight: bold;
+	}
+
+.preamble {
+	clear: right; 
+	padding: 0px 10px 0 10px;
+	max-width: 1200px;
+	}
+
+
+.supporting {	
+	padding-left: 10px; 
+	margin-bottom: 40px;
+	color: #060606;
+	max-width: 1200px;
+	}
+
+footer { 
+	text-align: right;
+	margin-top: +100px;
+	max-width: 100%;
+	max-height: 400px;
+	font-family: helvetica;
+	}
+footer a:link, footer a:visited { 
+	margin-right: 20px; 
+	}
+
+.sidebar {
+	margin-left: 400px; 
+	position: absolute; 
+	top: 0; 
+	right: 0;
+	}
+.sidebar .wrapper { 
+	font: 12px Poppins, sans-serif; 
+	padding: 20px; 
+	margin-top: 50px; 
+	width: 300px; 
+	box-shadow:  0 0 10px rgba(0,0,0,0.1);
+	text-decoration: none;
+	background-color: white;
+	}
+
+	.sidebar .wrapper .h3{ 
+		font-family: Avenir Next, sans-serif;
+		color: black;
+	}
+
+
+.sidebar ul {
+	margin: 0;
+	padding: 10px;
+	}
+.sidebar li {
+	line-height: 2em;  
+	display: block; 
+	padding-top: 5px; 
+	margin-bottom: 5px;
+	list-style-type: none;
+	}
+.sidebar li a:link {
+	color: black;
+	text-decoration: none;
+	}
+.sidebar li a:visited {
+	color: blue;
+	}
+
+
+.extra1 {
+	background: transparent url top left no-repeat; 
+	position: absolute; 
+	top: 40px; 
+	right: 0; 
+	width: 148px; 
+	height: 110px;
+	}
+

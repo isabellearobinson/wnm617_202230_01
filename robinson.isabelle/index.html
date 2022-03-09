@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>GoPup App</title>
+
+   <base href="/aau/wnm617/robinson.isabelle/">
+
+   <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+
+<script src="lib/js/jquery-2.2.4.min.js"></script>
+<script src="lib/js/jquery.mobile-1.4.5.min.js"></script> 
+   
+   <link rel="stylesheet" href="css/app.css">
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+</head>
+
+
+<!-- LOGIN; login-page -->
+
+<body>
+
+    <section data-role="page" id="login-page">
+        <div data-role="main">
+            <form id="login-form" class="form">
+                <div class="form-control">
+                    <input type="text" placeholder="Username" id="login-username" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">
+                    <input type="password" placeholder="Password" id="login-page" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">            
+                    <a href="#home-page" class="form-button">Confirm</a>
+                </div> 
+                <p class="login-form-text" style="font-style: italic;">Not a member yet? <a href="#signup-page" style="font-weight: bold; font-style: normal; color: black; text-decoration: underline;">Create an Account!</a></p>
+            </form>
+        </div>
+    </section>
+
+
+<!-- end -->
+
+
+<!-- SIGNUP PAGE; signup-page -->
+
+    <section data-role="page" id="signup-page">           
+        <div data-role="main">
+            <a href="#login-page"><- Back to Login</a>
+
+            <form id="signup-form" class="form">
+                <div class="form-control">
+                    <label for="signup-fullname">Full Name</label>
+                    <input type="text" placeholder="Type your Name" id="signup-fullname" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">
+                    <label for="signup-username">Username</label>
+                    <input type="text" placeholder="Pick a Username" id="signup-username" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">
+                    <label for="signup-password">Password</label>                    
+                    <input type="password" placeholder="Password" id="signup-password" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">            
+                    <a href="#confirmation-signup-page" class="form-button">Submit</a>
+                </div>
+                
+            </form>
+        </div>
+    </section>
+
+
+
+<!-- CONFIRMATION SIGNUP PAGE; confirmation-signup-page -->
+
+  <section data-role="page" id="confirmation-signup-page">
+
+   <div class="celebration-image">Confirmation Image Here (digital illustration)</div>
+
+  	<div class="display-flex flex-column">
+ 		  <h1 class="nav-page-top">You're officially ready to track some dogs!</h1>
+ 	</div>
+
+ 			<form id="login-form" class="form">
+      		    <div class="form-control">
+               		<a href="#home-page" class="form-button">Begin now</a>
+            	</div>
+            </form>
+ 		</div>
+ 	   </header>
+  </section>
+
+
+
+<!-- end -->
+
+
+<!-- EMPTY STATE; empty-state-home-page (NEED-->
+
+
+<!-- Home; home-page -->
+
+ 	<section data-role="page" id="home-page">
+
+<!-- PLUS BUTTON -->
+	  <a class="add-button" href="#add-new">
+      	<div class="add-new-dog"></div>
+      </a>
+
+ 	   <header data-role="header" class="navbar-header">
+ 		<h1 class="nav-page-top">Welcome back, Isabelle!</h1>
+ 			</div>
+ 	   </header>
+
+     <h3>Seen this week</h3>
+
+   			<div class="display-grid flex-column">
+   				<a href="#dog-page"><div class="image-dog1"><img src="images/placeholder.png"></div></a>
+   				<a href="#dog-page"><div class="image-dog1"><img src="images/placeholder.png"></div></a>
+   			</div>
+
+        <footer data-role="footer">
+         <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#community-page">Community</a></li>
+            <li><a href="#favorites-page">Favorites</a></li>
+            <li><a href="#profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+
+<!-- end -->
+
+<!-- Community page-->
+
+
+<section data-role="page" id="community-page">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Community</h1>
+      </div>
+     </header>
+
+     <div id="search-form">
+         <form class="form">
+        <div class="form-control">
+          <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
+            </div>
+
+         </form>
+        </div>
+
+     <div class="display-grid flex-column">
+          <a href="#dog-page"><div class="image-dog1"><img src="images/placeholder.png"></div></a>
+          <a href="#dog-page"><div class="image-dog1"><img src="images/placeholder.png"></div></a>
+          <a href="#dog-page"><div class="image-dog1"><img src="images/placeholder.png"></div></a>
+          <a href="#dog-page"><div class="image-dog1"><img src="images/placeholder.png"></div></a>
+        </div>
+
+        <footer data-role="footer">
+         <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#community-page">Community</a></li>
+            <li><a href="#favorites-page">Favorites</a></li>
+            <li><a href="#profile-page">Profile</a></li>
+         </ul>
+      </footer>
+
+<section>
+
+
+
+
+
+<!-- Favorites; favorites-page -->
+
+<section data-role="page" id="favorites-page">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Your Favorites</h1>
+      </div>
+     </header>
+
+     <div id="search-form">
+         <form class="form">
+        <div class="form-control">
+          <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
+            </div>
+
+         </form>
+        </div>
+
+     <div class="display-grid flex-column">
+          <a href="#dog-page"><div class="image-dog1"><img src="images/placeholder.png"></div></a>
+        </div>
+
+        <footer data-role="footer">
+
+         <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#community-page">Community</a></li>
+            <li><a href="#favorites-page">Favorites</a></li>
+            <li><a href="#profile-page">Profile</a></li>
+         </ul>
+      </footer>
+
+<section>
+
+  <!-- end -->
+
+
+<!-- dog-page -->
+
+
+	<section data-role="page" id="dog-page">
+ 	   <header data-role="header" class="display-flex flex-row space-between">
+ 	   		<div class="image-icon chevron-left"><a href="#home-page">back</a></div>
+ 			<h1 class="nav-page-top">Dog Profile</h1>
+ 			<div class="image-icon edit"><a href="#edit-dog">edit</a></div>
+ 		</header>
+
+ 	<div class="details"></div>
+ 		<div class="image-dog"></div>
+ 	<div class="display-flex flex-column detail-text">
+ 		<h3>Dog's Name</h3>
+    <p>Henry</p>
+ 		<h3>Dog's Breed</h3>
+ 		<p>Golden Doodle</p>
+ 		<h3>Description</h3>
+ 		<p>Very cute</p>
+ 		<h3>Past Sightings</h3>
+ 		<p> 11/11/21 @ 2844 Gough Street, San Francisco, CA. </p>
+
+ 	</div>
+
+  <footer data-role="footer">
+         <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#community-page">Community</a></li>
+            <li><a href="#favorites-page">Favorites</a></li>
+            <li><a href="#profile-page">Profile</a></li>
+         </ul>
+      </footer>
+
+	</section>
+
+
+<!-- end -->
+
+
+
+<!-- PROFILE PAGE; profile-page-->
+
+ 	<section data-role="page" id="profile-page">
+ 	   <header data-role="header" class="display-flex flex-row space-between">
+ 	   		<div class="image-icon chevron-left"><a href="#home-page">back</a></div>
+ 			<h1 class="nav-page-top">Profile</h1>
+ 			<div class="none"></div>
+ 		</header>
+ 		<div class="align-center display-flex flex-column justify-content-center align-items-center">
+ 			<div class="profile-image"></div>
+ 			<h1>Isabelle Robinson</h1>
+ 		</div>
+ 	</section>
+
+<!-- end -->
+
+
+<!-- SETTING-EDIT ACCOUNT; setting-edit-account -->
+
+<section data-role="page" id="setting-edit-account">
+      	<form id="edit-profile-form" class="form">
+      		
+      		<div class="form-control">
+      		  <label for="username-existing">Username</label>
+      			<input type="text" id="username-existing" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+      			<label for="username-existing">Password</label>
+      			<input type="password" placeholder="*Password*" id="username-existing" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+               <a href="#profile-page" class="form-button">Save</a>
+            </div>
+         </form>
+</section>	
+
+
+
+<!-- end -->
+
+
+
+<!-- ADD NEW ANIMAL; add-new-dog -->
+
+	<section data-role="page" id="add-new">
+ 	   <header data-role="header" class="display-flex flex-row space-between">
+	   		<div class="image-icon chevron-left"><a href="#home-page">back</a></div>
+	   		<div class="display-flex space-around"></div>
+			<h1 class="nav-page-top">Add New Sighting</h1>
+			<div class="none"></div>
+		</header>
+	
+	      	<form id="edit-profile-form" class="form">
+      		
+      		<div class="form-control">
+      		  <label for="username-existing">Dog's Name</label>
+      			<input type="text" placeholder="Buddy" id="username-existing" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+      			<label for="username-existing">Dog's Breed</label>
+      			<input type="text" placeholder="Golden Retriever" id="username-existing" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+      		  <label for="username-existing">Description</label>
+      			<input type="text" placeholder="Long hair, goofy smile, etc." id="username-existing" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+               <a href="#location" class="form-button">Add Location</a>
+            </div>
+         </form>
+
+
+	</section>
+
+  <!-- end -->
+
+
+</body>
+</html>
+
