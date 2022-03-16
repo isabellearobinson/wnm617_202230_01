@@ -13,7 +13,7 @@
 	--font-sans: 'Poppins', sans-serif;
 
 	--color-neutral-light:  #f2f2f2;
-	--color-neutral-medium:  #bebebe;
+	--color-neutral-medium:  #515151;
 	--color-neutral-dark:  #2f8285;
 
 
@@ -28,18 +28,21 @@ body {
 }
 
 h1 {
-	font-size: 17px;
+	font-size: 18px;
 	font-weight: bold;
+	margin-left: 25px;
 }
 
 h2 {
-	font-size:  1.5em;
+	font-size:  16px;
 	color: #bebebe;
+	margin-left: 25px;
 
 }
 
 h3 {
-	font-size:  1em;
+	font-size:  14px;
+	margin-left: 25px;
 
 }
 
@@ -48,11 +51,14 @@ h4 {
 	color: white;
 	text-align: center;
 	margin-top: 100px;
+	margin-left: 25px;
 
 }
 
 p {
-	color: #bebebe;
+	font-size: 12px;
+	color: #515151;
+	margin-left: 25px;
 }
 
 a {
@@ -86,7 +92,7 @@ a:hover {
 .display-grid {
     display: grid;
     grid-template-columns: repeat(2, 0fr);
-    grid-gap: 20px;
+    grid-gap: 6px;
 }
 
 /* Forms */
@@ -94,7 +100,8 @@ a:hover {
 
 .form-control  {
 	margin: 1em 0;
-	max-width: 80%;
+	max-width: 60%;
+	align-items: center;
 
 
 }
@@ -133,8 +140,19 @@ a:hover {
 	text-align: center;
 	text-decoration: none;
 	border-radius: 25px;
+	align-items: center;
 
 }
+
+.button2{
+	position: relative;
+    bottom: 30px;
+    width: 60%;
+    display: block;
+    margin: 0 20px;
+
+}
+
 
 #signin-form,
 #add-cat-form,
@@ -237,6 +255,28 @@ a:hover {
 
 
 .image-dog1{
+	max-width: 10%;
+    max-height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-radius: 8px;
+    margin-left: 25px;
+    
+}
+
+.image-dog2{
+	width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+}
+
+.image-dog3{
 	width: 100px;
     height: 100px;
     background-repeat: no-repeat;
@@ -248,10 +288,15 @@ a:hover {
 
 
 
-
-
-
-
+.image-dog6{
+	width: 50px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+}
 
 
 
