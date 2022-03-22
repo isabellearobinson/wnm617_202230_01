@@ -29,19 +29,30 @@
 <body>
 
     <section data-role="page" id="login-page">
-        <div data-role="main">
-            <form id="login-form" class="form">
-                <div class="form-control" style="align-items: center;">
+        <div data-role="main" class="display-flex flex-column">
+            <br>
+            <div class="flex-stretch"></div>
+            <form id="login-form" class="form" data-ajax="false">
+                <div class="form-control logo-container">
+                    <img class="image-splash" src="images/splash.png"/>
+                </div>
+                <br><br>
+                <div class="form-control">
                     <input type="text" placeholder="Username" id="login-username" data-role="none" class="form-input">
                 </div>
                 <div class="form-control">
                     <input type="password" placeholder="Password" id="login-password" data-role="none" class="form-input">
                 </div>
-                <div class="form-control">            
-                    <a href="#home-page" class="form-button">Confirm</a>
-                </div> 
-                <p class="login-form-text" style="font-style: italic;">Not a member yet? <a href="#signup-page" style="font-weight: bold; font-style: normal; color: black; text-decoration: underline;">Create an Account!</a></p>
+                <form id="login-form" class="form">
+              <div class="form-control">
+                  <a href="#home-page" class="form-button">Login</a>
+              </div>
             </form>
+                <p class="login-form-text">Don't have a Login? 
+                
+                <a href="#signup-page" class="signup-button" style="font-style:italic">Create an Account</a></p>
+            </form>
+            <div class="flex-stretch"></div>
         </div>
     </section>
 
@@ -51,9 +62,16 @@
 
 <!-- SIGNUP PAGE; signup-page -->
 
-    <section data-role="page" id="signup-page">           
-        <div data-role="main">
-            <a href="#login-page"><- Back to Login</a>
+    <section data-role="page" id="signup-page">     
+
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Create an Account</h1>
+      <ul>
+                <li><a href="#login-page">back</a></li>               
+                <li class="flex-stretch"></li>
+                
+            </ul>
+        </header>
 
             <form id="signup-form" class="form">
                 <div class="form-control">
@@ -82,11 +100,8 @@
 
   <section data-role="page" id="confirmation-signup-page">
 
-   <div class="celebration-image"><img src="images/placeholder.png"></div>
+   <div class="celebration-image"><img src="images/background1.png"></div>
 
-  	<div class="display-flex flex-column">
- 		  <h1 class="nav-page-top">You're officially ready to track some dogs!</h1>
- 	</div>
 
  			<form id="login-form" class="form">
       		    <div class="form-control">
@@ -119,28 +134,30 @@
         
 
      <div id="search-form">
-         <form class="form">
-        <div class="form-control">
           <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
             </div>
 
          </form>
         </div>
 
-     <div data-role="main" class="overscroll">
-      <h3>Spotted today</h3>
-      <div data-role="main" class="overscroll">
-      <div class="display-grid flex-column">
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/dog8.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav2.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/dog3.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav4.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav5.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/dog8.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav2.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/dog3.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav4.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav5.png" style="border-radius: 12px";></div></a>
+<!-- DOG LIST EXISTING -->
+         <div data-role="main" class="overscroll">
+        <div><h3>Seen today</h3></div>
+        <div class="dog-grid">
+
+        <div class="display-grid flex-column">
+          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog3"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog4"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog5"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog6"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog3"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog4"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog5"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog6"></div></a>
+          
         </div>
       </div>
     </div>
@@ -175,23 +192,30 @@
         
 
      <div id="search-form">
-         <form class="form">
-        <div class="form-control">
           <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
             </div>
 
          </form>
         </div>
 
-     <div data-role="main" class="overscroll">
-      <div class="display-grid flex-column">
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav1.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav2.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/dog3.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav4.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav5.png" style="border-radius: 12px";></div></a>
+    <div data-role="main" class="overscroll">
+        <div class="dog-grid">
+        <div class="display-grid flex-column">
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="community-dog1"></div></a>
+          
         </div>
       </div>
+    </div>
 
         <footer data-role="footer">
          <ul>
@@ -220,26 +244,31 @@
                 <li><a href="#add-new-dog">Add new</a></li>
             </ul>
         </header>
-        
 
-     <div id="search-form">
-         <form class="form">
-        <div class="form-control">
+        <div id="search-form">
           <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
             </div>
 
          </form>
         </div>
+        
+        
 
      <div data-role="main" class="overscroll">
-      <div class="display-grid flex-column">
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav1.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav2.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/dog3.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav4.png" style="border-radius: 12px";></div></a>
-          <a href="#existing-dog-page"><div class="image-dog"><img src="images/fav5.png" style="border-radius: 12px";></div></a>
+        <div class="dog-grid">
+        <div class="display-grid flex-column">
+          <a href="#existing-dog-page"><div class="fav-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="fav-dog2"></div></a>
+          <a href="#existing-dog-page"><div class="fav-dog3"></div></a>
+          <a href="#existing-dog-page"><div class="fav-dog4"></div></a>
+          <a href="#existing-dog-page"><div class="fav-dog1"></div></a>
+          <a href="#existing-dog-page"><div class="fav-dog2"></div></a>
+          <a href="#existing-dog-page"><div class="fav-dog3"></div></a>
+          <a href="#existing-dog-page"><div class="fav-dog4"></div></a>
+          
         </div>
       </div>
+    </div>
 
         <footer data-role="footer">
          <ul>
@@ -265,16 +294,17 @@
     <ul>
             <li><a href="#home-page" data-activate="#home-page">back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#add-new-dog" data-activate="#add-new-dog">edit</a></li>
+            <li><a href="#edit-dog" data-activate="#edit-dog">edit</a></li>
 
          </ul>
     
 
      </header>
 
- 	<div class="details"></div>
- 		<div class="image-dog6"><img src="images/dog8.png" style="border-radius: 12px; margin-top: 5px;"></div>
- 	<div class="display-flex flex-column detail-text">
+ 	<div class="align-center display-flex flex-column justify-content-center align-items-center" style="align-items: center; margin-top: 10px;">
+    <div class="details"></div>
+ 		<div class="image-dog6"><img src="images/dog8.png"></div>
+ 	<div class="display-flex flex-column detail-text" style="align-items: center;">
  		<h3>Dog's Name</h3>
     <p>Henry</p>
  		<h3>Dog's Breed</h3>
@@ -282,8 +312,11 @@
  		<h3>Description</h3>
  		<p>Very cute</p>
  		<h3>Past Sightings</h3>
- 		
-    <div class="image-dog"><img src="images/map.jpeg"></div>
+    <div class="align-center display-flex flex-column justify-content-center align-items-center">
+              <div data-role="main" class="take-image"><img src="images/map1.png"></div>
+          </div>
+</div>
+</div>
 </div>
    </section>
 
@@ -296,7 +329,7 @@
 
  	<section data-role="page" id="profile-page">
  	   <header data-role="header" class="navbar-header">
- 			<h1 class="nav-page-top">Your Favorites</h1>
+ 			<h1 class="nav-page-top">User Profile</h1>
  		
       <ul>
                 <li><a href="#home-page">back</a></li>               
@@ -304,26 +337,44 @@
                 <li><a href="#setting-edit-account">edit</a></li>
             </ul>
  		</header>
- 		<div class="align-center display-flex flex-column justify-content-center align-items-center" style="align-items: center;">
+ 		<div data-role="main" class="overscroll">
+      <div class="align-center display-flex flex-column justify-content-center align-items-center" style="align-items: center; margin-top: 10px;">
  			<a href="#"><div class="profile-pic1"><img src="images/profile-pic1.png"></div></a>
  			<h1>Isabelle Robinson</h1>
+    <h3>About me</h3>
+    <p>I am not very cool.</p>
     <h3>Age</h3>
     <p>25</p>
     <h3>Gender</h3>
     <p>Female</p>
     <h3>Address</h3>
     <p>1450 Chestnut Street, San Francisco, California.</p>
-    <h3>Tracked</h3>
-  </div>
+    <h3>Tracking History</h3>
+  
+        <div class="dog-grid">
+          <div class="display-grid flex-column">
+          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
 
-  <div data-role="main" class="overscroll">
 
-          <a href="#existing-dog-page"><div class="image-dog1"><img src="images/dog3.png"></div></a>
-          <a href="#existing-dog-page"><div class="image-dog2"><img src="images/placeholder.png"></div></a>
-          <a href="#existing-dog-page"><div class="image-dog2"><img src="images/dog8.png"></div></a>
+</div>
+</div>
+</div>
+
+ <div class="form-control">
+               <a href="#" class="button2">Logout</a>
+            </div>
+         </form>
+
+
+
         </div>
       </div>
     </div>
+
+   
 
         <footer data-role="footer">
          <ul>
@@ -342,13 +393,14 @@
 <!-- SETTING-EDIT ACCOUNT; setting-edit-account -->
 
 
-<section data-role="page" id="setting-edit-account">
+<section data-role="page" id="setting-edit-account" class="overscroll">
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Edit Account</h1>
     <!-- PLUS BUTTON -->
     <ul>
-            <li class="flex-stretch"></li>
+            
             <li><a href="#profile-page" data-activate="#profile-page">back</a></li>
+            <li class="flex-stretch"></li>
 
          </ul>
     
@@ -357,6 +409,11 @@
 
 
 <form id="edit-profile-form" class="form">
+
+                <div class="form-control">
+            <label for="username-existing">Full name</label>
+            <input type="text" placeholder="Full name goes here" id="username-existing" data-role="none" class="form-input">
+          </div>
 
                 <div class="form-control">
             <label for="username-existing">Username</label>
@@ -369,6 +426,16 @@
           </div>
 
           <div class="form-control">
+            <label for="username-existing">Age</label>
+            <input type="text" placeholder="Update age" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">About Me</label>
+            <input type="text" placeholder="Description" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
                <a href="#profile-page" class="form-button">Save changes</a>
             </div>
          </form>
@@ -378,13 +445,11 @@
 
 
 
-
-
 <!-- end -->
 
 
 
-<!-- ADD NEW ANIMAL; add-new-dog -->
+<!-- ADD NEW DOG; add-new-dog -->
 
 <section data-role="page" id="add-new-dog">
      <header data-role="header" class="navbar-header">
@@ -392,7 +457,7 @@
       </div>
      </header>
 	
-	      	<form id="edit-profile-form" class="form">
+	      	<form id="edit-profile-form" class="form" style="margin-left: 25px;">
       		
       		<div class="form-control">
       		  <label for="username-existing">Dog's Name</label>
@@ -417,6 +482,41 @@
 
 	</section>
 
+
+
+<!-- Edit DOG; edit-dog -->
+
+<section data-role="page" id="edit-dog">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Edit Profile</h1>
+      </div>
+     </header>
+  
+          <form id="edit-profile-form" class="form" style="margin-left: 25px;">
+          
+          <div class="form-control">
+            <label for="username-existing">Dog's Name</label>
+            <input type="text" placeholder="Buddy" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Dog's Breed</label>
+            <input type="text" placeholder="Golden Retriever" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Description</label>
+            <input type="text" placeholder="Long hair, goofy smile, etc." id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+               <a href="#added-page" class="form-button">Confirm</a>
+            </div>
+         </form>
+
+
+  </section>
+
   <!-- TAKE PHOTO  -->
 
 <section data-role="page" id="take-picture">
@@ -425,7 +525,9 @@
       </div>
      </header>
   
-            <div data-role="main" class="image-dog1"><img src="images/dog7.jpeg"></div>
+            <div class="align-center display-flex flex-column justify-content-center align-items-center" style="align-items: center; margin-top: 10px;">
+              <div data-role="main" class="take-image"><img src="images/golden.png"></div>
+          </div>
 
 
           <div class="form-control">
@@ -460,28 +562,34 @@
 
   </section>
 
+<!-- Review; review-page -->
+
 <section data-role="page" id="review-page">
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Review Details</h1>
     <ul>
             <li class="flex-stretch"></li>
-            <li><a href="#home-page" data-activate="#add-location">back</a></li>
+            <li><a href="#add-location" data-activate="#add-location">back</a></li>
          </ul>
     
 
      </header>
 
-  <div class="details"></div>
+  <div class="align-center display-flex flex-column justify-content-center align-items-center" style="align-items: center; margin-top: 10px;">
+    <div class="details"></div>
     <div class="image-dog6"><img src="images/fav4.png" style="align-items: center;"></div>
   <div class="display-flex flex-column detail-text" style="align-items: center;">
     <h3>Dog's Name</h3>
     <p>Sophie</p>
     <h3>Dog's Breed</h3>
-    <p>Pug</p>
+    <p>Border Collie</p>
     <h3>Description</h3>
     <p>Very cute</p>
-    <H3>Last Seen</H3>
-    <p>Marina Green</p>
+    <H3>Location</H3>
+    <div class="align-center display-flex flex-column justify-content-center align-items-center">
+              <div data-role="main" class="image-map"><img src="images/map1.png"></div>
+          </div>
+</div>
 </div>
 <div class="form-control">
                <a href="#added-page" class="form-button">Confirm</a>
@@ -494,30 +602,27 @@
    <section data-role="page" id="added-page">
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">New Dog</h1>
-    <!-- PLUS BUTTON -->
     <ul>
-            <li><a href="#home-page" data-activate="#home-page">back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#add-new-dog" data-activate="#add-new-dog">edit</a></li>
-
+            <li><a href="#add-new-dog" data-activate="#add-new-dog">back</a></li>
          </ul>
     
 
      </header>
 
-  <div class="details"></div>
-    <div class="image-dog6"><img src="images/fav5.png" style="border-radius: 12px; margin-top: 5px;"></div>
-  <div class="display-flex flex-column detail-text">
-    <h3>Dog's Name</h3>
-    <p>Sophie</p>
-    <h3>Dog's Breed</h3>
-    <p>Pug</p>
-    <h3>Description</h3>
-    <p>Very cute</p>
-    <h3>Past Sightings</h3>
-    
-    <div class="image-dog"><img src="images/map.jpeg"></div>
+  <div class="align-center display-flex flex-column justify-content-center align-items-center" style="align-items: center; margin-top: 10px;">
+    <div class="details"></div>
+    <div class="image-dog6"><img src="images/fav4.png" style="align-items: center;"></div>
+  <div class="display-flex flex-column detail-text" style="align-items: center;">
+    <h1 style="color: #F28D8D;">Congrats on tracking a new dog!</h1>
+  </div>
 </div>
+    
+<div class="form-control">
+               <a href="#home-page" class="button2">Finish</a>
+            </div>
+         </form>
+
    </section>
 
 

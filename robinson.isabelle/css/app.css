@@ -14,7 +14,7 @@
 
 	--color-neutral-light:  #f2f2f2;
 	--color-neutral-medium:  #515151;
-	--color-neutral-dark:  #2f8285;
+	--color-neutral-dark:  #361B01;
 
 
 	--header-height:  3rem;
@@ -90,14 +90,14 @@ a:hover {
 .flex-justify-center { justify-content: center; }
 
 .flex-column { flex-direction: column; display: flex;
-    flex-wrap: wrap;}
+    flex-wrap: wrap; justify-content: center;}
 
 .display-grid {
     display: grid;
     grid-template-columns: repeat(2, 0fr);
     grid-gap: 6px;
+    justify-content: center;
 }
-
 
 
 /* Forms */
@@ -107,7 +107,6 @@ a:hover {
 	margin: 1em 0;
 	max-width: 100%;
 	align-items: center;
-
 
 }
 
@@ -129,12 +128,16 @@ a:hover {
 	padding: 0.5em 1em;
 	margin: 0;
 	outline: 0;
+  border-radius: 20px;
+  justify-content: center;
 
+  
 }
+
 
 .form-button{
 	display: inline-block;
-	width: 60%;
+	width: 100%;
 	border-width: 0;
 	background-color: #F28D8D;
 	color: white;
@@ -150,21 +153,31 @@ a:hover {
 }
 
 .button2{
-	position: relative;
-    bottom: 30px;
-    width: 60%;
-    display: block;
-    margin: 0 20px;
-
+	display: inline-block;
+  width: 100%;
+  border-width: 0;
+  background-color: #000;
+  color: white;
+  font: inherit;
+  padding: 0.5em 1em;
+  margin: 0;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  justify-content: center;
 }
 
 
 #login-form,
 #add-dog-form,
 #edit-animal-form,
+#search-form,
 #edit-name-form {
 	padding: 1.5em;
 	max-width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -179,14 +192,15 @@ a:hover {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow: auto;
 
 }
 
 [data-role="main"] {
 	flex: 1 1 100%;
 	overflow: auto;
-	position: relative; /*scrolls on its own space*/
+	position: relative;
+  align-items: center;
 }
 
 .ui-mobile .ui-page-active {
@@ -197,7 +211,7 @@ a:hover {
    left: 0;
    width: 100%;
    height: 100%;
-   overflow: hidden;
+   overflow: auto;
 }
 
 .ui-header {
@@ -205,7 +219,7 @@ a:hover {
    height: var(--header-height);
    line-height: var(--header-height);
    border-width: 0;
-   background-color: #26160C;
+   background-color: #361B01;
    color: white;
 
    position: relative;
@@ -255,21 +269,12 @@ a:hover {
 }
 
 
-.image-dog1 {
-    width: 180px;
-    height: 180px;
-    border-radius: 8px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 
 
 .image-dog{
-	width: 168px;
+	width: 140px;
     height: 168px;
-    border-radius: 8px;
+    border-radius: 12px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -279,42 +284,156 @@ a:hover {
 
 .profile-pic{
 	max-width: 100px;
-    max-height: 100px%;
+    max-height: 100px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: relative;
-    margin-left: 25px;
     
 }
 
 .dog-grid{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding-bottom: 1rem;
+    align-items: center;
 }
 
 
 
+.form{
+    padding: 2em;
+
+}
+
+.image-dog1{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/fav2.png));
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-dog2{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/fav2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-dog3{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/fav2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 
+.image-dog4{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/fav2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-dog5{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/fav2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-dog6{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/fav2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-dog7{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/fav2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 
+.fav-dog1{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.fav-dog2{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.fav-dog3{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/3.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.fav-dog4{
+    width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/4.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.image-splash{
+  max-width: 50%;
+  max-height: 50%;
+} 
 
+.community-dog1{
+  width: 168px;
+    height: 168px;
+    border-radius: 10px;
+    background-image: url(../images/dog7.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.image-map{
+  margin: 0;
+}
