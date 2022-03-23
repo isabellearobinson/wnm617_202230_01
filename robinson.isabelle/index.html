@@ -33,7 +33,7 @@
             <br>
             <div class="flex-stretch"></div>
             <form id="login-form" class="form" data-ajax="false">
-                <div class="form-control logo-container">
+                <div class="form-control">
                     <img class="image-splash" src="images/splash.png"/>
                 </div>
                 <br><br>
@@ -43,14 +43,14 @@
                 <div class="form-control">
                     <input type="password" placeholder="Password" id="login-password" data-role="none" class="form-input">
                 </div>
-                <form id="login-form" class="form">
+                
               <div class="form-control">
-                  <a href="#home-page" class="form-button">Login</a>
+                  <input type="submit" class="form-button" data-role="none" value="Login">
               </div>
-            </form>
+  
                 <p class="login-form-text">Don't have a Login? 
                 
-                <a href="#signup-page" class="signup-button" style="font-style:italic">Create an Account</a></p>
+                <a href="#signup-page" class="signup-button" style="font-style:italic; font-weight: bold;">Create an Account</a></p>
             </form>
             <div class="flex-stretch"></div>
         </div>
@@ -354,19 +354,18 @@
         <div class="dog-grid">
           <div class="display-grid flex-column">
           <a href="#existing-dog-page"><div class="image-dog2"></div></a>
-          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
-          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
-          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog3"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog4"></div></a>
+          <a href="#existing-dog-page"><div class="image-dog5"></div></a>
 
 
 </div>
 </div>
 </div>
 
- <div class="form-control">
-               <a href="#" class="button2">Logout</a>
-            </div>
-         </form>
+<div class="form-control">            
+                    <a href="#logout-page" class="button2" data-activate="#logout-page">Log out</a>
+                </div>
 
 
 
@@ -387,7 +386,50 @@
 
 </section>
 
+
 <!-- end -->
+
+
+<!-- Log out -->
+
+<section data-role="page" id="logout-page">
+     <header data-role="header" class="navbar-header">
+      <h1 class="nav-page-top">Log Out</h1>
+    
+      <ul>
+                <li><a href="#profile-page">back</a></li>               
+                <li class="flex-stretch"></li>
+                <li><a href="#profile-page">cancel</a></li>
+        
+            </ul>
+    </header>
+  
+
+<div class="form-control">            
+                    <a href="#" class="button2" data-activate="#">Yes, log me out</a>
+                </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+   
+
+        <footer data-role="footer">
+         <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#community-page">Community</a></li>
+            <li><a href="#favorites-page">Favorites</a></li>
+            <li><a href="#profile-page">Profile</a></li>
+         </ul>
+      </footer>
+
+</section>
+
+
+
 
 
 <!-- SETTING-EDIT ACCOUNT; setting-edit-account -->
@@ -510,7 +552,7 @@
           </div>
 
           <div class="form-control">
-               <a href="#added-page" class="form-button">Confirm</a>
+               <a href="#existing-dog-page" class="form-button">Confirm</a>
             </div>
          </form>
 
@@ -522,6 +564,12 @@
 <section data-role="page" id="take-picture">
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Take Photo</h1>
+    <ul>
+            
+            <li><a href="#add-new-dog" data-activate="#add-new-dog">back</a></li>
+            <li class="flex-stretch"></li>
+
+         </ul>
       </div>
      </header>
   
@@ -545,13 +593,16 @@
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Add Location</h1>
     <ul>
-            <li class="flex-stretch"></li>
+            
             <li><a href="#take-picture" data-activate="#take-picture">back</a></li>
+            <li class="flex-stretch"></li>
 
          </ul>
      </header>
 
-  <div data-role="main" class="map-placeholder"><img src="images/map.jpeg"></div>
+  <div class="align-center display-flex flex-column justify-content-center align-items-center">
+    <img src="images/map.jpeg">
+  </div>
 
 
           <div class="form-control">
@@ -569,7 +620,8 @@
     <h1 class="nav-page-top">Review Details</h1>
     <ul>
             <li class="flex-stretch"></li>
-            <li><a href="#add-location" data-activate="#add-location">back</a></li>
+            <li><a href="#add-new-dog" data-activate="#add-new-dog">cancel</a></li>
+            
          </ul>
     
 
@@ -603,8 +655,9 @@
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">New Dog</h1>
     <ul>
-            <li class="flex-stretch"></li>
+            
             <li><a href="#add-new-dog" data-activate="#add-new-dog">back</a></li>
+            <li class="flex-stretch"></li>
          </ul>
     
 
