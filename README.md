@@ -1,5 +1,8 @@
-# wnm617_202230_01
-WNM 617: Mobile Tech
+# Isabelle Robinson
 
-## YOU SHOULD NEVER EDIT THIS FILE.
-This one is for the main project.
+## Class Project Mobile Tech
+
+## Important Links
+
+- https://isabellerobinsondesign.com/aau/wnm617/robinson.isabelle/index.html
+- http://isabellerobinsondesign.com/aau/wnm617/robinson.isabelle/m02/index.html 
