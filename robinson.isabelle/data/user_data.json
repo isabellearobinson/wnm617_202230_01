@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Melinda Jenkins",
+    "username": "user1",
+    "email": "user1@gmail.com",
+    "password": "md5(pass)",
+    "img": "https://via.placeholder.com/400/853/fff/?text=user1",
+    "date_create": "2022-03-30 04:54:18"
+  },
+  {
+    "id": 2,
+    "name": "Inez Freeman",
+    "username": "user2",
+    "email": "user2@gmail.com",
+    "password": "md5(pass)",
+    "img": "https://via.placeholder.com/400/778/fff/?text=user2",
+    "date_create": "2022-04-03 06:09:21"
+  },
+  {
+    "id": 3,
+    "name": "Goff Flowers",
+    "username": "user3",
+    "email": "user3@gmail.com",
+    "password": "md5(pass)",
+    "img": "https://via.placeholder.com/400/927/fff/?text=user3",
+    "date_create": "2022-02-07 06:43:06"
+  },
+  {
+    "id": 4,
+    "name": "Leonard Porter",
+    "username": "user4",
+    "email": "user4@gmail.com",
+    "password": "md5(pass)",
+    "img": "https://via.placeholder.com/400/940/fff/?text=user4",
+    "date_create": "2022-02-06 03:15:58"
+  },
+  {
+    "id": 5,
+    "name": "Wright Stewart",
+    "username": "user5",
+    "email": "user5@gmail.com",
+    "password": "md5(pass)",
+    "img": "https://via.placeholder.com/400/817/fff/?text=user5",
+    "date_create": "2022-02-22 05:35:50"
+  },
+  {
+    "id": 6,
+    "name": "Monica Vance",
+    "username": "user6",
+    "email": "user6@gmail.com",
+    "password": "md5(pass)",
+    "img": "https://via.placeholder.com/400/713/fff/?text=user6",
+    "date_create": "2022-03-24 06:12:08"
+  },
+  {
+    "id": 7,
+    "name": "Merle Charles",
+    "username": "user7",
+    "email": "user7@gmail.com",
+    "password": "md5(pass)",
+    "img": "https://via.placeholder.com/400/821/fff/?text=user7",
+    "date_create": "2022-02-13 02:04:56"
+  },
+  {
+    "id": 8,
+    "name": "Vivian Woodard",
+    "username": "user8",
+    "email": "user8@gmail.com",
+    "password": "md5(pass)",
+    "img": "https://via.placeholder.com/400/719/fff/?text=user8",
+    "date_create": "2022-04-02 01:13:43"
+  },
+  {
+    "id": 9,
+    "name": "Adele Small",
+    "username": "user9",
+    "email": "user9@gmail.com",
+    "password": "md5(pass)",
+    "img": "https://via.placeholder.com/400/823/fff/?text=user9",
+    "date_create": "2022-01-25 12:16:38"
+  },
+  {
+    "id": 10,
+    "name": "Heather Cox",
+    "username": "user10",
+    "email": "user10@gmail.com",
+    "password": "md5(pass)",
+    "img": "https://via.placeholder.com/400/923/fff/?text=user10",
+    "date_create": "2022-02-02 04:01:37"
+  }
+]
