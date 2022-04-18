@@ -5,11 +5,25 @@ $(() => {
    // EVENT DELEGATION
    $(document)
 
+      .on("pagecontainerbeforeshow", function(event, ui){
+      console.log(ui.toPage[0].id)
+
+
    // FORM SUBMISSIONS
    .on("submit", "#login-form", function(e) {
       e.preventDefault();
       checkLoginForm();
    })
+
+         // PAGE ROUTING
+      switch(ui.toPage[0].id) {
+         case "recent-page": RecentPage(); break;
+         case "list-page": ListPage(); break;
+         case "user-profile-page": UserProfilePage(); break;
+         case "animal-profile-page": AnimalProfilePage(); break;
+      }
+   })
+
 
 
    // CLICKS
