@@ -1,15 +1,18 @@
-const checkLoginForm = () => {
-   //let user = $("#signup-username").val();
-   //let pass = $("#signup-password").val();
+const checkLoginForm = async() => {
    let user = $("#login-username").val();
-   let pass = $("#login-password").val();   
+   let pass = $("#login-password").val();
 
    console.log(user,pass)
 
-   if (user === 'user' && pass === 'pass') {
+   let founduser = await query({
+      type:'check_login',
+      params: [user,pass]
+   })
+
+   if (founduser.result.length > 0) {
       // logged in
       console.log('success');
-      sessionStorage.userId = 3;
+      sessionStorage.userId = founduser.result[0].id;
       $("#login-form")[0].reset();
    } else {
       // not logged in
@@ -32,6 +35,6 @@ const checkUserId = () => {
       if(p.some(o => o === window.location.hash))
          $.mobile.navigate("#home-page");
    }
-} 
+}
 
 

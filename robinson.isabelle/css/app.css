@@ -172,6 +172,9 @@ a:hover {
 #login-form,
 #add-dog-form,
 #edit-animal-form,
+#edit-animal-form1,
+#edit-animal-form2,
+#edit-animal-form3,
 #search-form,
 #edit-name-form {
 	padding: 1.5em;
@@ -434,8 +437,9 @@ a:hover {
 
 }
 
-.image-map{
+.map{
   margin: 0;
+  height: 100%;
 }
 
 .map-placeholder {

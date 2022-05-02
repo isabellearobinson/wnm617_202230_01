@@ -16,14 +16,21 @@
    <script src="js/functions.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
+   <script src="js/maps.js"></script>
 
 <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>    
+
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-qA1eqbF4ZCVCFjcysXkd5f2WSzrfiqg"
+      defer
+    ></script>
 
    <link rel="stylesheet" href="css/app.css">
 
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
 
 </head>
 
@@ -107,13 +114,13 @@
    <div class="celebration-image"><img src="images/background1.png"></div>
 
 
-      <form id="login-form" class="form">
-              <div class="form-control">
-                  <a href="#home-page" class="form-button">Begin now</a>
-              </div>
+ 			<form id="login-form" class="form">
+      		    <div class="form-control">
+               		<a href="#home-page" class="form-button">Begin now</a>
+            	</div>
             </form>
-    </div>
-     </header>
+ 		</div>
+ 	   </header>
   </section>
 
 
@@ -144,12 +151,14 @@
          </form>
         </div>
 
-<!-- DOG LIST EXISTING -->
-         <div data-role="main" class="overscroll">
-        <div><h3>Seen today</h3></div>
-        <ul class="animal-list"></ul>
-        <div class="dog-grid"></div>
-        
+    <div data-role="main" class="overscroll">
+         <h1>Seen Today</h1>
+         <div class="display-grid flex-column">
+          <ul>
+            <li class="dog-grid"></li>
+         </ul>
+       </div>
+
 
         <footer data-role="footer">
          <ul>
@@ -166,12 +175,12 @@
 <!-- end -->
 
 
-<!-- Recents; recents-page -->
+<!-- Recents; recent-page -->
 
 
 <section data-role="page" id="recent-page">
      <header data-role="header" class="navbar-header">
-    <h1 class="nav-page-top">Your Favorites</h1>
+    <h1 class="nav-page-top">Recent Sightings</h1>
       <ul>
                 <li><a href="#home-page">back</a></li>               
                 <li class="flex-stretch"></li>
@@ -185,21 +194,11 @@
 
          </form>
         </div>
-        
-        
 
-     <div data-role="main" class="overscroll">
-        <div class="dog-grid">
-        <div class="display-grid flex-column">
-          <a href="#existing-dog-page"><div class="fav-dog1"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog2"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog3"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog4"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog1"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog2"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog3"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog4"></div></a>
-          
+<section data-role="page" id="recent-page">
+      <div data-role="main">
+        <div class="map"></div>
+
         </div>
       </div>
     </div>
@@ -214,16 +213,17 @@
 
 </section>
 
+
   <!-- end -->
 
 
 <!-- existing dog-page -->
 
 
-  <section data-role="page" id="existing-dog-page">
+	<section data-role="page" id="existing-dog-page">
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Dog Profile</h1>
-
+    <!-- PLUS BUTTON -->
     <ul>
             <li><a href="#home-page" data-activate="#home-page">back</a></li>
             <li class="flex-stretch"></li>
@@ -231,9 +231,11 @@
 
          </ul>
     
-</header>
 
-  <div data-role="main">
+     </header>
+
+
+      <div data-role="main">
          <div class="animal-profile-top">
          </div>
          <div class="animal-profile-nav">
@@ -249,33 +251,37 @@
       </div>
    </section>
 
-
-
-</div>
-</div>
-</div>
-   </section>
-
-
+<div class="display-flex flex-column detail-text" style="align-items: center;">
 <!-- end -->
 
 
 
 <!-- PROFILE PAGE; profile-page-->
 
-  <section data-role="page" id="profile-page">
-     <header data-role="header" class="navbar-header">
-      <h1 class="nav-page-top">User Profile</h1>
-    
+ 	<section data-role="page" id="profile-page">
+ 	   <header data-role="header" class="navbar-header">
+ 			<h1 class="nav-page-top">User Profile</h1>
+ 		
       <ul>
                 <li><a href="#home-page">back</a></li>               
                 <li class="flex-stretch"></li>
                 <li><a href="#setting-edit-account">edit</a></li>
             </ul>
-    </header>
-
-      <div data-role="main"></div>
-   
+ 		</header>
+ 		<div data-role="main" class="overscroll">
+      <div class="align-center display-flex flex-column justify-content-center align-items-center" style="align-items: center; margin-top: 10px;">
+ 			<a href="#"><div class="profile-pic1"><img src="images/profile-pic1.png"></div></a>
+ 			<h1>Isabelle Robinson</h1>
+    <h3>About me</h3>
+    <p>I am not very cool.</p>
+    <h3>Age</h3>
+    <p>25</p>
+    <h3>Gender</h3>
+    <p>Female</p>
+    <h3>Address</h3>
+    <p>1450 Chestnut Street, San Francisco, California.</p>
+    <h3>Tracking History</h3>
+  
         <div class="dog-grid">
           <div class="display-grid flex-column">
           <a href="#existing-dog-page"><div class="image-dog2"></div></a>
@@ -303,7 +309,7 @@
         <footer data-role="footer">
          <ul>
             <li><a href="#home-page">Home</a></li>
-            <li><a href="#recent-page">Recents</a></li>
+            <li><a href="#recent-page">Recent</a></li>
             <li><a href="#profile-page">Profile</a></li>
          </ul>
       </footer>
@@ -346,7 +352,7 @@
         <footer data-role="footer">
          <ul>
             <li><a href="#home-page">Home</a></li>
-            <li><a href="#recent-page">Recents</a></li>
+            <li><a href="#recent-page">Recent</a></li>
             <li><a href="#profile-page">Profile</a></li>
          </ul>
       </footer>
@@ -375,7 +381,7 @@
      </header>
 
 
-<form id="edit-profile-form" class="form">
+<form id="edit-profile-form1" class="form">
 
                 <div class="form-control">
             <label for="username-existing">Full name</label>
@@ -427,31 +433,31 @@
             </ul>
       </div>
      </header>
-  
-          <form id="edit-profile-form" class="form" style="margin-left: 25px;">
-          
-          <div class="form-control">
-            <label for="username-existing">Dog's Name</label>
-            <input type="text" placeholder="Buddy" id="username-existing" data-role="none" class="form-input">
-          </div>
+	
+	      	<form id="edit-profile-form2" class="form" style="margin-left: 25px;">
+      		
+      		<div class="form-control">
+      		  <label for="username-existing">Dog's Name</label>
+      			<input type="text" placeholder="Buddy" id="username-existing" data-role="none" class="form-input">
+      		</div>
 
-          <div class="form-control">
-            <label for="username-existing">Dog's Breed</label>
-            <input type="text" placeholder="Golden Retriever" id="username-existing" data-role="none" class="form-input">
-          </div>
+      		<div class="form-control">
+      			<label for="username-existing">Dog's Breed</label>
+      			<input type="text" placeholder="Golden Retriever" id="username-existing" data-role="none" class="form-input">
+      		</div>
 
-          <div class="form-control">
-            <label for="username-existing">Description</label>
-            <input type="text" placeholder="Long hair, goofy smile, etc." id="username-existing" data-role="none" class="form-input">
-          </div>
+      		<div class="form-control">
+      		  <label for="username-existing">Description</label>
+      			<input type="text" placeholder="Long hair, goofy smile, etc." id="username-existing" data-role="none" class="form-input">
+      		</div>
 
-          <div class="form-control">
+      		<div class="form-control">
                <a href="#take-picture" class="form-button">Next</a>
             </div>
          </form>
 
 
-  </section>
+	</section>
 
 
 
@@ -463,7 +469,7 @@
       </div>
      </header>
   
-          <form id="edit-profile-form" class="form" style="margin-left: 25px;">
+          <form id="edit-profile-form3" class="form" style="margin-left: 25px;">
           
           <div class="form-control">
             <label for="username-existing">Dog's Name</label>
@@ -615,3 +621,4 @@
 
 </body>
 </html>
+
