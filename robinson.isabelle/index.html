@@ -1,3 +1,7 @@
+<!-- AIzaSyC-qA1eqbF4ZCVCFjcysXkd5f2WSzrfiqg
+google cloud platform
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +12,10 @@
    <base href="/aau/wnm617/robinson.isabelle/">
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+  <link rel="stylesheet" href="css/app.css">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <script src="lib/js/jquery-2.2.4.min.js"></script>
 
@@ -16,15 +24,16 @@
    <script src="js/functions.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
+   <script src="js/maps.js"></script>
 
 <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>    
+   
 
-   <link rel="stylesheet" href="css/app.css">
-
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-qA1eqbF4ZCVCFjcysXkd5f2WSzrfiqg"
+      defer
+    ></script>
+    
 </head>
 
 
@@ -166,43 +175,29 @@
 <!-- end -->
 
 
+
 <!-- Recents; recents-page -->
 
 
 <section data-role="page" id="recent-page">
      <header data-role="header" class="navbar-header">
-    <h1 class="nav-page-top">Your Favorites</h1>
+    <h1 class="nav-page-top">Your Recent Sightings</h1>
       <ul>
-                <li><a href="#home-page">back</a></li>               
+                           
                 <li class="flex-stretch"></li>
                 <li><a href="#add-new-dog">+</a></li>
             </ul>
         </header>
-
-        <div id="search-form">
+        
+          <div id="search-form">
           <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
             </div>
 
+        <div data-role="main">
+         <div class="map"></div>
          </form>
         </div>
         
-        
-
-     <div data-role="main" class="overscroll">
-        <div class="dog-grid">
-        <div class="display-grid flex-column">
-          <a href="#existing-dog-page"><div class="fav-dog1"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog2"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog3"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog4"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog1"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog2"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog3"></div></a>
-          <a href="#existing-dog-page"><div class="fav-dog4"></div></a>
-          
-        </div>
-      </div>
-    </div>
 
         <footer data-role="footer">
          <ul>
@@ -227,7 +222,7 @@
     <ul>
             <li><a href="#home-page" data-activate="#home-page">back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#edit-dog" data-activate="#edit-dog">edit</a></li>
+            <li><a href="#edit-dog" data-activate="#edit-animal-page">edit</a></li>
 
          </ul>
     
@@ -377,32 +372,32 @@
 
 <form id="edit-profile-form" class="form">
 
-                <div class="form-control">
+                <div class="user-edit-form">
             <label for="username-existing">Full name</label>
             <input type="text" placeholder="Full name goes here" id="username-existing" data-role="none" class="form-input">
           </div>
 
-                <div class="form-control">
+                <div class="user-edit-form">
             <label for="username-existing">Username</label>
             <input type="text" placeholder="*New Username*" id="username-existing" data-role="none" class="form-input">
           </div>
 
-          <div class="form-control">
+          <div class="user-edit-form">
             <label for="username-existing">Password</label>
             <input type="password" placeholder="*New Password*" id="username-existing" data-role="none" class="form-input">
           </div>
 
-          <div class="form-control">
+          <div class="user-edit-form">
             <label for="username-existing">Age</label>
             <input type="text" placeholder="Update age" id="username-existing" data-role="none" class="form-input">
           </div>
 
-          <div class="form-control">
+          <div class="user-edit-form">
             <label for="username-existing">About Me</label>
             <input type="text" placeholder="Description" id="username-existing" data-role="none" class="form-input">
           </div>
 
-          <div class="form-control">
+          <div class="user-edit-form">
                <a href="#profile-page" class="form-button">Save changes</a>
             </div>
          </form>
@@ -457,7 +452,7 @@
 
 <!-- Edit DOG; edit-dog -->
 
-<section data-role="page" id="edit-dog">
+<section data-role="page" id="edit-animal-page">
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Edit Profile</h1>
       </div>

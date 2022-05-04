@@ -83,7 +83,7 @@ $(() => {
       $(this).html($(target).html())
    });
 
-   [,"#favorites-page","#home-page","#profile-page"].forEach((p,i)=>{
+   [,"#recent-page","#home-page","#profile-page"].forEach((p,i)=>{
       if(window.location.hash === p) {
          $(`.nav-icon-set li:nth-child(${i})`).addClass("active");
       }
