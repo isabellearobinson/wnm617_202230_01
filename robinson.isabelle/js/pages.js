@@ -1,4 +1,18 @@
 
+const HomePage = async() => {
+   // destructuring
+   let {result:animals} = await query({
+      type:'animals_by_user_id',
+      params:[sessionStorage.userId]
+   });
+   
+   console.log(animals);
+
+   $("#home-page .animal-list").html(makeAnimalList(animals));
+}
+
+
+
 const RecentPage = async() => {
 
 
@@ -45,19 +59,6 @@ const RecentPage = async() => {
 }
 
 
-const HomePage = async() => {
-   // destructuring
-   let {result:animals} = await query({
-      type:'animals_by_user_id',
-      params:[sessionStorage.userId]
-   })
-   
-   console.log(animals)
-
-   $("#home-page .animal-list").html(makeAnimalList(animals));
-}
-
-
 const UserProfilePage = async() => {
    let {result:users} = await query({
       type:'user_by_id',
@@ -65,7 +66,7 @@ const UserProfilePage = async() => {
    })
    let [user] = users;
 
-   console.log(user)
+   console.log(user);
 
    $("#user-profile-page [data-role='main']").html(makeUserProfilePage(user));
 }

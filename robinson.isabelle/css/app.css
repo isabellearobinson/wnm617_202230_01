@@ -96,6 +96,12 @@ a:hover {
 }
 
 
+.fill-parent {
+   height: 100%;
+   width: 100%;
+}
+.noclick-children * { pointer-events:none; }
+
 /* Forms */
 
 
@@ -167,13 +173,14 @@ a:hover {
 
 #login-form,
 #signup-form
-#add-dog-form,
-#edit-animal-form,
-#edit-animal-form1,
-#edit-animal-form2,
-#edit-animal-form3,
+#animal-add-form,
+#animal-edit-form,
 #search-form,
-#edit-name-form {
+#animal-edit-name,
+#animal-edit-name,
+#animal-edit-type,
+#animal-edit-breed,
+#animal-edit-description {
   padding: 1.5em;
   max-width: 100%;
   align-items: center;
