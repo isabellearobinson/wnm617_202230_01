@@ -1,9 +1,9 @@
+
 const checkLoginForm = async() => {
    let user = $("#login-username").val();
    let pass = $("#login-password").val();
 
    console.log(user,pass)
-
 
    let founduser = await query({
       type:'check_signin',
@@ -19,15 +19,10 @@ const checkLoginForm = async() => {
       // not logged in
       console.log('failure');
       sessionStorage.removeItem('userId');
-   document.getElementById("failedLogin").innerHTML = "<p style='color:red' id='subheading'>Try again!</p>";
    }
 
    checkUserId();
 }
-
-
-
-
 
 const checkUserId = () => {
    let p = ["#login-page","#signup-page",""];
@@ -35,14 +30,10 @@ const checkUserId = () => {
    if (sessionStorage.userId === undefined) {
       // not logged in
       if(!p.some(o => o === window.location.hash))
-         $.mobile.navigate("#");
+         $.mobile.navigate("#login-page");
    } else {
       // logged in
       if(p.some(o => o === window.location.hash))
          $.mobile.navigate("#home-page");
    }
-}
-
-function dontGo(event) {
-    event.preventDefault();
 }

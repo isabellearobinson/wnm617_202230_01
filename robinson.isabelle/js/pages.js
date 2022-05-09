@@ -109,7 +109,7 @@ const AnimalEditPage = async() => {
 
    $("#animal-edit-form").html(makeAnimalForm(animal,"animal-edit"))
 }
-const AddNewDog = async() => {
+const AddNewDogPage = async() => {
    let {result:animals} = await query({
       type:'animal_by_id',
       params:[sessionStorage.animalId]

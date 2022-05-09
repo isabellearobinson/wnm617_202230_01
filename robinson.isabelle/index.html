@@ -42,19 +42,17 @@
 
     <h1>Hello there, welcome to GoPup!</h1>
     <form id="login-form" class="form" data-ajax="false">
-      <div class="form-control">
-      <input type="text" placeholder="@ username here" id="login-username" data-role="none" class="form-input">
-      </div>
-
-      <div class="form-control">
-      <input type="password" placeholder="password here" id="login-password" data-role="none" class="form-input">
-      </div>
-
-       <div id="failedLogin"></div>
-        </div>
-         <!-- <input type="submit" data-role="none"> -->
             <div class="form-control">
-               <button type="submit" class="form-button" data-role="none">Submit</button><a href="#home-page"></a>
+               <label for="login-username" class="form-label">Username</label>
+               <input type="text" id="login-username" data-role="none" class="form-input" placeholder="Type your Username">
+            </div>
+            <div class="form-control">
+               <label for="login-password" class="form-label">Password</label>
+               <input type="password" id="login-password" data-role="none" class="form-input" placeholder="Type your Password">
+            </div>
+            <!-- <input type="submit" data-role="none"> -->
+            <div class="form-control">
+               <button type="submit" class="form-button" data-role="none">Submit</button>
             </div>
 
                 <p class="login-form-text">Don't have a Login? <a href="#signup-page" class="signup-button" style="font-style:italic; font-weight: bold;">Create an Account</a></p>
@@ -109,7 +107,7 @@
       <ul>
                 <li><a href="#home-page"></a></li>               
                 <li class="flex-stretch"></li>
-                <li><a href="#add-new-dog">+</a></li>
+                <li><a href="#add-new-dog-page">+</a></li>
             </ul>
         </header>
         
@@ -143,25 +141,27 @@
 
 
 
-   <section data-role="page" id="recent-page">
+   <section data-role="page" id="recent-page" class="overscroll">
       <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Welcome back, Isabelle!</h1>
       <ul>
                              
                 <li class="flex-stretch"></li>
-                <li><a href="#add-new-dog">+</a></li>
+                <li><a href="#add-new-dog-page">+</a></li>
             </ul>
         </header>
         
+<div id="search-form">
+          <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
+            </div>
+          </div>
+
+         </form>
 
         <div data-role="main">
          <div class="map"></div>
          
-     <div id="search-form">
-          <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
-            </div>
-
-         </form>
+     
            
 <footer data-role="footer">
          <ul>
@@ -170,8 +170,6 @@
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
-
-   </section>
 
       <div class="modal" id="map-drawer">
          <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
@@ -222,7 +220,7 @@
    </section>
 
 
-   <section data-role="page" id="add-new-dog">
+   <section data-role="page" id="add-new-dog-page">
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Add a Sighting</h1>
     <ul>
@@ -239,7 +237,7 @@
    </section>
 
 
-   
+
 <!-- Review; review-page -->
 
 <section data-role="page" id="review-page">
