@@ -1,13 +1,24 @@
+
+const HomePage = async() => {
+   // destructuring
+   let {result:animals} = await query({
+      type:'animals_by_user_id',
+      params:[sessionStorage.userId]
+   })
+   
+   console.log(animals)
+
+   $("#home-page .animal-list").html(makeAnimalList(animals));
+}
+
 const RecentPage = async() => {
 
 
-   let {result,error} = await query({
+   let {result} = await query({
       type:'recent_animal_locations',
       params:[sessionStorage.userId]
    });
    console.log(result);
-
-   if(error) throw(error);
 
    let valid_animals = result.reduce((r,o)=>{
       o.icon = o.img;
@@ -37,29 +48,17 @@ const RecentPage = async() => {
          //    .setContent(makeAnimalPopupBody(animal));
 
 
-         $("#map-drawer")
-            .addClass("active")
-            .find(".modal-body")
-            .html(makeAnimalPopupBody({...animal, id:animal.animal_id}))
-      })
-   })
-}
+         // $("#map-drawer")
+            //.addClass("active")
+            //.find(".modal-body")
+            //.html(makeAnimalPopupBody({...animal, id:animal.animal_id}))
+      //})
+   //})
+//} 
 
 
-const HomePage = async() => {
-   // destructuring
-   let {result:animals} = await query({
-      type:'animals_by_user_id',
-      params:[sessionStorage.userId]
-   })
-   
-   console.log(animals)
 
-   $("#home-page .gallery-control").html(makeAnimalList(animals));
-}
-
-
-const UserProfilePage = async() => {
+const ProfilePage = async() => {
    let {result:users} = await query({
       type:'user_by_id',
       params:[sessionStorage.userId]
@@ -68,9 +67,11 @@ const UserProfilePage = async() => {
 
    console.log(user)
 
-   $("#user-profile-page [data-role='main']").html(makeUserProfilePage(user));
+   $("#user-profile-page [data-role='main']").html(makeProfilePage(user));
 }
-const UserEditPage = async() => {
+
+
+const SettingEditAccount = async() => {
    let {result:users} = await query({
       type:'user_by_id',
       params:[sessionStorage.userId]
@@ -97,7 +98,7 @@ const AnimalProfilePage = async() => {
    })
    console.log(locations)
 
-   let map_el = await makeMap("#animal-profile-page .map");
+   let map_el = await makeMap("#recent-page .map");
    makeMarkers(map_el,locations)
 }
 
@@ -110,7 +111,7 @@ const AnimalEditPage = async() => {
 
    $("#animal-edit-form").html(makeAnimalForm(animal,"animal-edit"))
 }
-const AnimalAddPage = async() => {
+const AddNewDog = async() => {
    let {result:animals} = await query({
       type:'animal_by_id',
       params:[sessionStorage.animalId]
@@ -119,9 +120,6 @@ const AnimalAddPage = async() => {
 
    $("#animal-add-form").html(makeAnimalForm({},"animal-add"))
 }
-
-
-
 
 const ChooseLocationPage = async () => {
    let map_el = await makeMap("#choose-location-page .map");

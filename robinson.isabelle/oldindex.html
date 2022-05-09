@@ -1,0 +1,600 @@
+<!-- AIzaSyC-qA1eqbF4ZCVCFjcysXkd5f2WSzrfiqg
+google cloud platform
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>GoPup App</title>
+
+   <base href="/aau/wnm617/robinson.isabelle/">
+
+   <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+  <link rel="stylesheet" href="css/app.css">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<script src="lib/js/jquery-2.2.4.min.js"></script>
+
+<script src="js/app.js"></script>
+   <script src="js/signin.js"></script>
+   <script src="js/functions.js"></script>
+   <script src="js/pagess.js"></script>
+   <script src="js/parts.js"></script>
+   <script src="js/maps.js"></script>
+
+<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>    
+   
+
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-qA1eqbF4ZCVCFjcysXkd5f2WSzrfiqg"
+      defer
+    ></script>
+
+</head>
+
+
+<!-- LOGIN; login-page -->
+
+<section data-role="page" id="login-page">
+  <div data-role="main">
+
+  <div class="form-control">
+  <img class="image-splash" src="images/splash.png"/>
+
+
+    <h1>Hello there, welcome to GoPup!</h1>
+    <form id="login-form" class="form" data-ajax="false">
+      <div class="form-control">
+      <input type="text" placeholder="@ username here" id="login-username" data-role="none" class="form-input">
+      </div>
+
+      <div class="form-control">
+      <input type="password" placeholder="password here" id="login-password" data-role="none" class="form-input">
+      </div>
+
+       <div id="failedLogin"></div>
+        </div>
+          <div class="form-control">
+               <button type="submit" class="form-button" value="login">Login</button>
+
+
+                <p class="login-form-text">Don't have a Login? 
+                
+                <a href="#signup-page" class="signup-button" style="font-style:italic; font-weight: bold;">Create an Account</a></p>
+            </form>
+            <div class="flex-stretch"></div>
+        </div>
+    </section>
+
+
+<!-- end -->
+
+
+<!-- SIGNUP PAGE; signup-page -->
+
+    <section data-role="page" id="signup-page">     
+
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Create an Account</h1>
+      <ul>
+                <li><a href="#login-page">back</a></li>               
+                <li class="flex-stretch"></li>
+                
+            </ul>
+        </header>
+
+            <form id="signup-form" class="form">
+                <div class="form-control">
+                    <label for="signup-fullname" style="margin-left: 15px;">Full Name</label>
+                    <input type="text" placeholder="Type your Name" id="signup-fullname" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">
+                    <label for="signup-username" style="margin-left: 15px;">Username</label>
+                    <input type="text" placeholder="Pick a Username" id="signup-username" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">
+                    <label for="signup-password" style="margin-left: 15px;">Password</label>                    
+                    <input type="password" placeholder="Password" id="signup-password" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">            
+                    <a href="#confirmation-signup-page" class="form-button">Submit</a>
+                </div>
+                
+            </form>
+        </div>
+    </section>
+
+
+
+<!-- CONFIRMATION SIGNUP PAGE; confirmation-signup-page -->
+
+  <section data-role="page" id="confirmation-signup-page">
+
+   <div class="celebration-image"><img src="images/background1.png"></div>
+
+
+      <form id="login-form" class="form">
+              <div class="form-control">
+                  <a href="#home-page" class="form-button">Begin now</a>
+              </div>
+            </form>
+    </div>
+     </header>
+  </section>
+
+
+
+<!-- end -->
+
+
+<!-- EMPTY STATE; empty-state-home-page (NEED TO DESIGN  THIS)-->
+
+
+<!-- Home; home-page -->
+
+<section data-role="page" id="home-page" class="overscroll">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Welcome back, Isabelle!</h1>
+      <ul>
+                <li><a href="#home-page"></a></li>               
+                <li class="flex-stretch"></li>
+                <li><a href="#add-new-dog">+</a></li>
+            </ul>
+        </header>
+        
+
+     <div id="search-form">
+          <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
+            </div>
+
+         </form>
+        </div>
+
+<!-- DOG LIST EXISTING -->
+         
+         <div><h3>Seen today</h3></div>
+         <div data-role="main" class="overscroll">
+          <div class="gallery-control display-grid-gallery flex-column">
+            </div>
+          </div>
+        
+
+        <footer data-role="footer">
+         <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#recent-page">Recents</a></li>
+            <li><a href="#profile-page">Profile</a></li>
+         </ul>
+      </footer>
+
+</section>
+
+
+
+<!-- end -->
+
+
+
+<!-- Recent; recent-page -->
+
+
+<section data-role="page" id="recent-page">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Your Recent Sightings</h1>
+      <ul>
+                           
+                <li class="flex-stretch"></li>
+                <li><a href="#add-new-dog">+</a></li>
+            </ul>
+        </header>
+        
+          <div id="search-form">
+          <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
+            </div>
+
+        <div data-role="main">
+         <div class="map"></div>
+         </form>
+        </div>
+        
+
+        <footer data-role="footer">
+         <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#recent-page">Recents</a></li>
+            <li><a href="#profile-page">Profile</a></li>
+         </ul>
+      </footer>
+
+</section>
+
+  <!-- end -->
+
+
+<!-- existing dog-page -->
+
+
+  <section data-role="page" id="existing-dog-page">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Dog Profile</h1>
+
+    <ul>
+            <li><a href="#home-page" data-activate="#home-page">back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#edit-dog" data-activate="#edit-animal-page">edit</a></li>
+
+         </ul>
+    
+</header>
+
+  <div data-role="main">
+         <div class="animal-profile-top">
+         </div>
+         <div class="animal-profile-nav">
+            <div class="active">Map</div>
+            <div>Description</div>
+         </div>
+         <div class="animal-profile-bottom">
+            <div class="animal-profile-map active">
+               <div class="map map-placeholder"></div>
+            </div>
+            <div class="animal-profile-description"></div>
+         </div>
+      </div>
+   </section>
+
+
+
+</div>
+</div>
+</div>
+   </section>
+
+
+<!-- end -->
+
+ <section data-role="page" id="user-profile-page">
+      <div data-role="main"></div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+   </section>
+
+<!-- PROFILE PAGE; profile-page-->
+
+  <section data-role="page" id="profile-page">
+     <header data-role="header" class="navbar-header">
+      <h1 class="nav-page-top">User Profile</h1>
+    
+      <ul>
+                <li><a href="#home-page">back</a></li>               
+                <li class="flex-stretch"></li>
+                <li><a href="#setting-edit-account">edit</a></li>
+            </ul>
+    </header>
+
+        
+        <div data-role="main"></div>
+
+<div class="form-control">            
+                    <a href="#logout-page" class="button2" data-activate="#logout-page">Log out</a>
+                </div>
+   
+
+        <footer data-role="footer">
+         <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#recent-page">Recents</a></li>
+            <li><a href="#profile-page">Profile</a></li>
+         </ul>
+      </footer>
+
+</section>
+
+
+<!-- end -->
+
+
+<!-- Log out -->
+
+<section data-role="page" id="logout-page">
+     <header data-role="header" class="navbar-header">
+      <h1 class="nav-page-top">Log Out</h1>
+    
+      <ul>
+                <li><a href="#profile-page">back</a></li>               
+                <li class="flex-stretch"></li>
+                <li><a href="#profile-page">cancel</a></li>
+        
+            </ul>
+    </header>
+
+    <H3>Are you sure you want to leave?</H3>
+  
+
+<div class="form-control">            
+                    <a href="#" class="button2" data-activate="#" style="margin-top: 500px;">Yes, log me out</a>
+                </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+   
+
+        <footer data-role="footer">
+         <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#recent-page">Recents</a></li>
+            <li><a href="#profile-page">Profile</a></li>
+         </ul>
+      </footer>
+
+</section>
+
+
+
+
+
+<!-- SETTING-EDIT ACCOUNT; setting-edit-account -->
+
+
+<section data-role="page" id="edit-user-page" class="overscroll">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Edit Account</h1>
+    <!-- PLUS BUTTON -->
+    <ul>
+            
+            <li><a href="#user-profile-page" data-activate="#user-profile-page">back</a></li>
+            <li class="flex-stretch"></li>
+
+         </ul>
+    
+
+     </header>
+
+
+<form id="edit-profile-form" class="form">
+
+                <div class="user-edit-form">
+            <label for="username-existing">Full name</label>
+            <input type="text" placeholder="Full name goes here" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+                <div class="user-edit-form">
+            <label for="username-existing">Username</label>
+            <input type="text" placeholder="*New Username*" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="user-edit-form">
+            <label for="username-existing">Password</label>
+            <input type="password" placeholder="*New Password*" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="user-edit-form">
+            <label for="username-existing">Age</label>
+            <input type="text" placeholder="Update age" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="user-edit-form">
+            <label for="username-existing">About Me</label>
+            <input type="text" placeholder="Description" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="user-edit-form">
+               <a href="#profile-page" class="form-button">Save changes</a>
+            </div>
+         </form>
+
+
+</section>
+
+
+
+<!-- end -->
+
+
+
+<!-- ADD NEW DOG; add-new-dog -->
+
+<section data-role="page" id="add-new-dog">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Add a Sighting</h1>
+    <ul>
+                <li><a href="#home-page">back</a></li>               
+                <li class="flex-stretch"></li>
+            </ul>
+      </div>
+     </header>
+  
+          <form id="edit-profile-form" class="form" style="margin-left: 25px;">
+          
+          <div class="form-control">
+            <label for="username-existing">Dog's Name</label>
+            <input type="text" placeholder="Buddy" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Dog's Breed</label>
+            <input type="text" placeholder="Golden Retriever" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Description</label>
+            <input type="text" placeholder="Long hair, goofy smile, etc." id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+               <a href="#take-picture" class="form-button">Next</a>
+            </div>
+         </form>
+
+
+  </section>
+
+
+
+<!-- Edit DOG; edit-dog -->
+
+<section data-role="page" id="edit-animal-page">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Edit Profile</h1>
+      </div>
+     </header>
+  
+          <form id="edit-profile-form" class="form" style="margin-left: 25px;">
+          
+          <div class="form-control">
+            <label for="username-existing">Dog's Name</label>
+            <input type="text" placeholder="Buddy" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Dog's Breed</label>
+            <input type="text" placeholder="Golden Retriever" id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Description</label>
+            <input type="text" placeholder="Long hair, goofy smile, etc." id="username-existing" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+               <a href="#existing-dog-page" class="form-button">Confirm</a>
+            </div>
+         </form>
+
+
+  </section>
+
+  <!-- TAKE PHOTO  -->
+
+<section data-role="page" id="take-picture">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Take Photo</h1>
+    <ul>
+            
+            <li><a href="#add-new-dog" data-activate="#add-new-dog">back</a></li>
+            <li class="flex-stretch"></li>
+
+         </ul>
+      </div>
+     </header>
+  
+            <div class="align-center display-flex flex-column justify-content-center align-items-center" style="align-items: center; margin-top: 10px;">
+              <div data-role="main" class="take-image"><img src="images/golden.png"></div>
+          </div>
+
+
+          <div class="form-control">
+               <a href="#add-location" class="form-button">Next</a>
+            </div>
+         </form>
+
+
+  </section>
+
+
+<!-- Drop pin; add-location -->
+
+<section data-role="page" id="add-location">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Add Location</h1>
+    <ul>
+            
+            <li><a href="#take-picture" data-activate="#take-picture">back</a></li>
+            <li class="flex-stretch"></li>
+
+         </ul>
+     </header>
+
+  <div class="align-center display-flex flex-column justify-content-center align-items-center">
+    <img src="images/map.jpeg">
+  </div>
+
+
+          <div class="form-control">
+               <a href="#review-page" class="form-button">Drop pin</a>
+            </div>
+         </form>
+
+
+  </section>
+
+<!-- Review; review-page -->
+
+<section data-role="page" id="review-page">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Review Details</h1>
+    <ul>
+            <li class="flex-stretch"></li>
+            <li><a href="#add-new-dog" data-activate="#add-new-dog">cancel</a></li>
+            
+         </ul>
+    
+
+     </header>
+
+  <div class="align-center display-flex flex-column justify-content-center align-items-center" style="align-items: center; margin-top: 10px;">
+    <div class="details"></div>
+    <div class="image-dog6"><img src="images/fav4.png" style="align-items: center;"></div>
+  <div class="display-flex flex-column detail-text" style="align-items: center;">
+    <h3>Dog's Name</h3>
+    <p>Sophie</p>
+    <h3>Dog's Breed</h3>
+    <p>Border Collie</p>
+    <h3>Description</h3>
+    <p>Very cute</p>
+    <H3>Location</H3>
+    <p>123 Fake Street</p>
+    
+</div>
+</div>
+<div class="form-control">
+               <a href="#added-page" class="form-button">Confirm</a>
+            </div>
+         </form>
+
+
+   </section>
+
+   <section data-role="page" id="added-page">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">New Dog</h1>
+    <ul>
+            
+            <li><a href="#add-new-dog" data-activate="#add-new-dog">back</a></li>
+            <li class="flex-stretch"></li>
+         </ul>
+    
+
+     </header>
+
+  <div class="align-center display-flex flex-column justify-content-center align-items-center" style="align-items: center; margin-top: 10px;">
+    <div class="details"></div>
+    <div class="image-dog6"><img src="images/fav4.png" style="align-items: center;"></div>
+  <div class="display-flex flex-column detail-text" style="align-items: center;">
+    <h3 style="color: #F28D8D;">Congrats on tracking a new dog!</h3>
+  </div>
+</div>
+    
+<div class="form-control">
+               <a href="#home-page" class="button2">Finish</a>
+            </div>
+         </form>
+
+   </section>
+
+
+
+
+
+  <!-- end -->
+
+
+</body>
+</html>
