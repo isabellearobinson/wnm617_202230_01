@@ -22,7 +22,7 @@ google cloud platform
 <script src="js/app.js"></script>
    <script src="js/signin.js"></script>
    <script src="js/functions.js"></script>
-   <script src="js/pages.js"></script>
+   <script src="js/pagess.js"></script>
    <script src="js/parts.js"></script>
    <script src="js/maps.js"></script>
 
@@ -33,34 +33,35 @@ google cloud platform
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-qA1eqbF4ZCVCFjcysXkd5f2WSzrfiqg"
       defer
     ></script>
-    
+
 </head>
 
 
 <!-- LOGIN; login-page -->
 
-<body>
+<section data-role="page" id="login-page">
+  <div data-role="main">
 
-    <section data-role="page" id="login-page">
-        <div data-role="main" class="display-flex flex-column">
-            <br>
-            <div class="flex-stretch"></div>
-            <form id="login-form" class="form" data-ajax="false">
-                <div class="form-control">
-                    <img class="image-splash" src="images/splash.png"/>
-                </div>
-                <br><br>
-                <div class="form-control">
-                    <input type="text" placeholder="Username" id="login-username" data-role="none" class="form-input">
-                </div>
-                <div class="form-control">
-                    <input type="password" placeholder="Password" id="login-password" data-role="none" class="form-input">
-                </div>
-                
-              <div class="form-control">
-                  <input type="submit" class="form-button" data-role="none" value="Login">
-              </div>
-  
+  <div class="form-control">
+  <img class="image-splash" src="images/splash.png"/>
+
+
+    <h1>Hello there, welcome to GoPup!</h1>
+    <form id="login-form" class="form" data-ajax="false">
+      <div class="form-control">
+      <input type="text" placeholder="@ username here" id="login-username" data-role="none" class="form-input">
+      </div>
+
+      <div class="form-control">
+      <input type="password" placeholder="password here" id="login-password" data-role="none" class="form-input">
+      </div>
+
+       <div id="failedLogin"></div>
+        </div>
+          <div class="login-form">
+               <button type="submit" class="form-button" value="login">Login</button>
+
+
                 <p class="login-form-text">Don't have a Login? 
                 
                 <a href="#signup-page" class="signup-button" style="font-style:italic; font-weight: bold;">Create an Account</a></p>
@@ -154,10 +155,12 @@ google cloud platform
         </div>
 
 <!-- DOG LIST EXISTING -->
+         
+         <div><h3>Seen today</h3></div>
          <div data-role="main" class="overscroll">
-        <div><h3>Seen today</h3></div>
-        <ul class="animal-list"></ul>
-        <div class="dog-grid"></div>
+          <div class="gallery-control display-grid-gallery flex-column">
+            </div>
+          </div>
         
 
         <footer data-role="footer">
@@ -176,7 +179,7 @@ google cloud platform
 
 
 
-<!-- Recents; recents-page -->
+<!-- Recent; recent-page -->
 
 
 <section data-role="page" id="recent-page">
@@ -254,7 +257,10 @@ google cloud platform
 
 <!-- end -->
 
-
+ <section data-role="page" id="user-profile-page">
+      <div data-role="main"></div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+   </section>
 
 <!-- PROFILE PAGE; profile-page-->
 
@@ -269,30 +275,12 @@ google cloud platform
             </ul>
     </header>
 
-      <div data-role="main"></div>
-   
-        <div class="dog-grid">
-          <div class="display-grid flex-column">
-          <a href="#existing-dog-page"><div class="image-dog2"></div></a>
-          <a href="#existing-dog-page"><div class="image-dog3"></div></a>
-          <a href="#existing-dog-page"><div class="image-dog4"></div></a>
-          <a href="#existing-dog-page"><div class="image-dog5"></div></a>
-
-
-</div>
-</div>
-</div>
+        
+        <div data-role="main"></div>
 
 <div class="form-control">            
                     <a href="#logout-page" class="button2" data-activate="#logout-page">Log out</a>
                 </div>
-
-
-
-        </div>
-      </div>
-    </div>
-
    
 
         <footer data-role="footer">
@@ -355,13 +343,13 @@ google cloud platform
 <!-- SETTING-EDIT ACCOUNT; setting-edit-account -->
 
 
-<section data-role="page" id="setting-edit-account" class="overscroll">
+<section data-role="page" id="edit-user-page" class="overscroll">
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Edit Account</h1>
     <!-- PLUS BUTTON -->
     <ul>
             
-            <li><a href="#profile-page" data-activate="#profile-page">back</a></li>
+            <li><a href="#user-profile-page" data-activate="#user-profile-page">back</a></li>
             <li class="flex-stretch"></li>
 
          </ul>

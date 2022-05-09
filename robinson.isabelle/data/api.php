@@ -61,7 +61,7 @@ function makeStatement($data) {
          return makeQuery($c, "SELECT * FROM `locations`", $p);
 
       case "user_by_id":
-         //return makeQuery($c, "SELECT * FROM `users` WHERE `id` = ?", $p);
+         //return makeQuery($c, "SELECT * FROM `track_202230_users` WHERE `id` = ?", $p);
          return makeQuery($c, "SELECT `id`,`name`,`email`,`img`,`username` FROM `users` WHERE `id` = ?", $p);
       case "animal_by_id":
          return makeQuery($c, "SELECT * FROM `animals` WHERE `id` = ?", $p);
@@ -72,6 +72,9 @@ function makeStatement($data) {
          return makeQuery($c, "SELECT * FROM `animals` WHERE `user_id` = ?", $p);
       case "locations_by_animal_id":
          return makeQuery($c, "SELECT * FROM `locations` WHERE `animal_id` = ?", $p);
+
+
+
 
 
 
@@ -93,6 +96,104 @@ function makeStatement($data) {
             WHERE a.user_id = ?
             ORDER BY l.animal_id, l.date_create DESC
          ", $p);
+
+
+
+
+      /* INSERT */
+
+
+      case "insert_user":
+         $r = makeQuery($c,"SELECT id FROM `users` WHERE `username`=? OR `email` = ?", [ $p[0], $p[1] ]);
+         if(count($r['result']))
+            return ["error"=>"Username or Email already exists"];
+
+         makeQuery($c,"INSERT INTO
+            `users`
+            (`username`,`email`,`password`,`img`,`date_create`)
+            VALUES
+            (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
+
+      case "insert_animal":
+         makeQuery($c,"INSERT INTO
+            `animals`
+            (`user_id`,`name`,`type`,`breed`,`description`,`img`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
+
+      case "insert_location":
+         makeQuery($c,"INSERT INTO
+            `locations`
+            (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
+
+
+
+      /* UPDATE */
+
+      case "update_user":
+         $r = makeQuery($c,"UPDATE
+            `users`
+            SET
+               `name` = ?,
+               `username` = ?,
+               `email` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "update_password":
+         $r = makeQuery($c,"UPDATE
+            `users`
+            SET
+               `password` = md5(?)
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "update_animal":
+         $r = makeQuery($c,"UPDATE
+            `animals`
+            SET
+               `name` = ?,
+               `type` = ?,
+               `breed` = ?,
+               `description` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "update_location":
+         $r = makeQuery($c,"UPDATE
+            `locations`
+            SET
+               `description` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
+
+      /* DELETE */
+
+      case "delete_animal":
+         $r = makeQuery($c,"DELETE FROM
+            `animals`
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
 
 
 

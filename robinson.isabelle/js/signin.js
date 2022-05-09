@@ -4,8 +4,9 @@ const checkLoginForm = async() => {
 
    console.log(user,pass)
 
+
    let founduser = await query({
-      type:'check_login',
+      type:'check_signin',
       params: [user,pass]
    })
 
@@ -18,10 +19,15 @@ const checkLoginForm = async() => {
       // not logged in
       console.log('failure');
       sessionStorage.removeItem('userId');
+   document.getElementById("failedLogin").innerHTML = "<p style='color:red' id='subheading'>Try again!</p>";
    }
 
    checkUserId();
 }
+
+
+
+
 
 const checkUserId = () => {
    let p = ["#login-page","#signup-page",""];
@@ -29,7 +35,7 @@ const checkUserId = () => {
    if (sessionStorage.userId === undefined) {
       // not logged in
       if(!p.some(o => o === window.location.hash))
-         $.mobile.navigate("#login-page");
+         $.mobile.navigate("#");
    } else {
       // logged in
       if(p.some(o => o === window.location.hash))
@@ -37,4 +43,6 @@ const checkUserId = () => {
    }
 }
 
-
+function dontGo(event) {
+    event.preventDefault();
+}

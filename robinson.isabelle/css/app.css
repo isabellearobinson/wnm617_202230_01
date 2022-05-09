@@ -1,75 +1,71 @@
-
 /* CSS RESET */
 
 
-
-
-
 *, *::after, *::before {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-	--font-sans: 'Poppins', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
 
-	--color-neutral-light:  #f2f2f2;
-	--color-neutral-medium:  #515151;
-	--color-neutral-dark:  #361B01;
+  --color-neutral-light:  #f2f2f2;
+  --color-neutral-medium:  #515151;
+  --color-neutral-dark:  #361B01;
 
 
-	--header-height:  3rem;
+  --header-height:  3rem;
 }
 
 body {
-	margin: 0;
-	font-size: 100%;
-	font-family: var(--font-sans);
+  margin: 0;
+  font-size: 100%;
+  font-family: var(--font-sans);
 
 }
 
 h1 {
-	font-size: 18px;
-	font-weight: bold;
-	margin-left: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 25px;
 }
 
 h2 {
-	font-size:  16px;
-	color: #bebebe;
-	margin-left: 25px;
+  font-size:  16px;
+  color: #bebebe;
+  margin-left: 25px;
 
 }
 
 h3 {
-	font-size:  14px;
-	margin-left: 25px;
+  font-size:  14px;
+  margin-left: 25px;
 
 }
 
 h4 {
-	font-size:  0.6em;
-	color: white;
-	text-align: center;
-	margin-top: 100px;
-	margin-left: 25px;
+  font-size:  0.6em;
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  margin-left: 25px;
 
 }
 
 p {
-	font-size: 12px;
-	color: #515151;
-	margin-left: 25px;
+  font-size: 12px;
+  color: #515151;
+  margin-left: 25px;
 }
 
 a {
-	color: inherit;
-	font-weight: 500;
-	text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
 
 }
 
 a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /* Layout Classes */
@@ -104,30 +100,30 @@ a:hover {
 
 
 .form-control  {
-	margin: 1em 0;
-	max-width: 100%;
-	align-items: center;
+  margin: 1em 0;
+  max-width: 100%;
+  align-items: center;
 
 }
 
 .ui-mobile .form-label {
-	font-size: 14px;
-	font-weight: bold;
-	color: #000;
-	margin: 0.5rem 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  margin: 0.5rem 0;
 
 }
 
 .form-input {
-	display: inline-block;
-	width: 100%;
-	border-width: 0;
-	background-color: var(--color-neutral-light);
-	font: inherit;
-	font-weight: 300;
-	padding: 0.5em 1em;
-	margin: 0;
-	outline: 0;
+  display: inline-block;
+  width: 100%;
+  border-width: 0;
+  background-color: var(--color-neutral-light);
+  font: inherit;
+  font-weight: 300;
+  padding: 0.5em 1em;
+  margin: 0;
+  outline: 0;
   border-radius: 20px;
   justify-content: center;
 
@@ -136,24 +132,24 @@ a:hover {
 
 
 .form-button{
-	display: inline-block;
-	width: 100%;
-	border-width: 0;
-	background-color: #F28D8D;
-	color: white;
-	font: inherit;
-	padding: 0.5em 1em;
-	margin: 0;
-	outline: 0;
-	text-align: center;
-	text-decoration: none;
-	border-radius: 25px;
-	align-items: center;
+  display: inline-block;
+  width: 100%;
+  border-width: 0;
+  background-color: #F28D8D;
+  color: white;
+  font: inherit;
+  padding: 0.5em 1em;
+  margin: 0;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  align-items: center;
 
 }
 
 .button2{
-	display: inline-block;
+  display: inline-block;
   width: 100%;
   border-width: 0;
   background-color: #000;
@@ -170,6 +166,7 @@ a:hover {
 
 
 #login-form,
+#signup-form
 #add-dog-form,
 #edit-animal-form,
 #edit-animal-form1,
@@ -177,8 +174,8 @@ a:hover {
 #edit-animal-form3,
 #search-form,
 #edit-name-form {
-	padding: 1.5em;
-	max-width: 100%;
+  padding: 1.5em;
+  max-width: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -188,21 +185,21 @@ a:hover {
 /*Page layouts*/
 
 .ui-mobile .ui-page-active {
-	display: flex;
-	flex-direction: column;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 
 }
 
 [data-role="main"] {
-	flex: 1 1 100%;
-	overflow: auto;
-	position: relative;
+  flex: 1 1 100%;
+  overflow: auto;
+  position: relative;
   align-items: center;
 }
 
@@ -271,11 +268,89 @@ a:hover {
    padding: 0 1em;
 }
 
+/* Animal List */
+.animal-list {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   padding: 0 1em;
+   height: 100%;
+   width: 100%;
+   position: relative;
+   overflow: auto;
+}
+.animal-list-item a {
+   display: flex;
+   font-weight: normal;
+   margin: 1em 0;
+   border-radius: 0.5em;
+   overflow: hidden;
+   box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+}
+.animal-list-item a:hover {
+   text-decoration: none;
+}
+.animal-list-image img {
+   width: 6em;
+   vertical-align: text-bottom;
+}
+.animal-list-body {
+   padding: 1em;
+}
+.animal-list-name {
+   font-size: 1.3em;
+}
 
 
+
+#animal-profile-page [data-role="main"] {
+   display: flex;
+   flex-direction: column;
+}
+#animal-profile-page header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(255,255,255,0.1);
+}
+.animal-profile-top {
+    height: 40vh;
+    position: relative;
+}
+.animal-profile-bottom {
+   flex: 1 1 auto;
+   position: relative;
+}
+.animal-profile-nav {
+   height: var(--header-height);
+   line-height: var(--header-height);
+   display: flex;
+}
+.animal-profile-nav div {
+   text-align: center;
+   flex: 1 1 auto;
+}
+.animal-profile-bottom>div {
+   opacity: 0;
+   pointer-events: none;
+   transition: all 0.3s;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+.animal-profile-bottom div.active {
+   opacity: 1;
+   pointer-events: initial;
+}
+
+/* Before midterm */
 
 .image-dog{
-	width: 140px;
+  width: 140px;
     height: 168px;
     border-radius: 12px;
     background-position: center;
@@ -286,7 +361,7 @@ a:hover {
     
 
 .profile-pic{
-	max-width: 100px;
+  max-width: 100px;
     max-height: 100px;
     background-repeat: no-repeat;
     background-position: center;

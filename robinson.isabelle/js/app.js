@@ -10,10 +10,17 @@ $(() => {
 
       // PAGE ROUTING
       switch(ui.toPage[0].id) {
-         case "home-page": HomePage(); break;
          case "recent-page": RecentPage(); break;
-         case "profile-page": ProfilePage(); break;
-         case "existing-dog-page": ExistingDogPage(); break;
+         case "home-page": HomePage(); break;
+         
+         case "user-profile-page": UserProfilePage(); break;
+         case "user-edit-page": UserEditPage(); break;
+         
+         case "animal-profile-page": AnimalProfilePage(); break;
+         case "animal-edit-page": AnimalEditPage(); break;
+         case "add-new-dog": AddNewDog(); break;
+
+         case "choose-location-page": ChooseLocationPage(); break;
       }
    })
 
@@ -26,6 +33,29 @@ $(() => {
       e.preventDefault();
       checkLoginForm();
    })
+   .on("submit", "#signup-form", function(e) {
+      e.preventDefault();
+      submitUserSignup();
+   })
+
+
+
+
+
+   // FORM SUBMISSION CLICKS
+   .on("click", ".js-submit-animal-add", function() {
+      submitAnimalAdd();
+   })
+   .on("click", ".js-submit-animal-edit", function() {
+      submitAnimalEdit();
+   })
+   .on("click", ".js-submit-user-edit", function() {
+      submitUserEdit();
+   })
+   .on("click", ".js-submit-location-add", function() {
+      submitLocationAdd();
+   })
+
 
 
    // CLICKS
@@ -39,10 +69,16 @@ $(() => {
       try {
          e.preventDefault();
          sessionStorage.animalId = $(this).data('id');
-         $.mobile.navigate("#existing-dog-page");
+         $.mobile.navigate("#animal-profile-page");
       } catch(e) {
          throw("No id detected");
       }
+   })
+   .on("click",".js-animal-delete", function(e) {
+      submitDeleteAnimal();
+   })
+   .on("click",".js-location-choose-animal", function(e) {
+      $("#location-animal").val(sessionStorage.animalId)
    })
 
 
@@ -83,7 +119,7 @@ $(() => {
       $(this).html($(target).html())
    });
 
-   [,"#recent-page","#home-page","#profile-page"].forEach((p,i)=>{
+   [,"#home-page","#recent-page","#user-profile-page"].forEach((p,i)=>{
       if(window.location.hash === p) {
          $(`.nav-icon-set li:nth-child(${i})`).addClass("active");
       }
