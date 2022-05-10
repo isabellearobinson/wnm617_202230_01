@@ -6,7 +6,7 @@ const HomePage = async() => {
       params:[sessionStorage.userId]
    });
    
-   console.log(animals);
+   console.log(animals)
 
    $("#home-page .animal-list").html(makeAnimalList(animals));
 }
@@ -66,7 +66,7 @@ const UserProfilePage = async() => {
    })
    let [user] = users;
 
-   console.log(user);
+   console.log(user)
 
    $("#user-profile-page [data-role='main']").html(makeUserProfilePage(user));
 }
