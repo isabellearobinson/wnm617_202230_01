@@ -197,7 +197,7 @@ function makeStatement($data) {
 
 
 
-      case "check_login":
+      case "check_signin":
          return makeQuery($c, "SELECT id from `users` WHERE `username` = ? AND `password` = md5(?)", $p);
 
       default:
@@ -208,9 +208,9 @@ function makeStatement($data) {
 
 
 /*
-"SELECT * FROM users",
-"SELECT * FROM users WHERE id = ?",
-"SELECT * FROM animals WHERE user_id = ?",
+"SELECT * FROM track_202230_users",
+"SELECT * FROM track_202230_users WHERE id = ?",
+"SELECT * FROM track_202230_animals WHERE user_id = ?",
 */
 
 $data = json_decode(file_get_contents("php://input"));
