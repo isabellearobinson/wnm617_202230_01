@@ -19,6 +19,7 @@
    <script src="js/parts.js"></script>
    <script src="js/forms.js"></script>
    <script src="js/maps.js"></script>
+<script src="js/pin.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -107,7 +108,7 @@
      <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Welcome back, Isabelle!</h1>
       <ul>
-                <li><a href="#home-page"></a></li>               
+                             
                 <li class="flex-stretch"></li>
                 <li><a href="#add-new-dog-page">+</a></li>
             </ul>
@@ -128,7 +129,7 @@
 
         <footer data-role="footer">
          <ul>
-            <li><a href="#home-page">Home</a></li>
+            <li><a class="active" href="#home-page">Home</a></li>
             <li><a href="#recent-page">Recents</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
@@ -169,7 +170,7 @@
 <footer data-role="footer">
          <ul>
             <li><a href="#home-page">Home</a></li>
-            <li><a href="#recent-page">Recents</a></li>
+            <li><a class="active" href="#recent-page">Recents</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
@@ -193,18 +194,20 @@
 
 
 
-   <section data-role="page" id="animal-profile-page">
-      <header data-role="header">
-         <h1></h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#animal-edit-page">Edit</a></li>
-         </ul>
-      </header>
+   <section data-role="page" id="animal-profile-page" class="overscroll">
+      <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Dog Profile</h1>
+      <ul>
+                             
+                <li><a href="#home-page">back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#animal-edit-page">edit</a></li>
+            </ul>
+        </header>
+        
       <div data-role="main">
          <div class="animal-profile-top">
-            <a href="#" class="floater bottom right js-animal-delete noclick-children"><img src="" class="icon"></a>
+            <a href="#" class="floater bottom right js-animal-delete noclick-children"><img src="images/trash.png" class="icon"></a>
          </div>
          <div class="animal-profile-nav">
             <div class="active">Map</div>
@@ -236,8 +239,48 @@
   
       <div data-role="main">
          <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
+      
+
+      <label for="file-upload" data-role="none" class="add-file" style="display:flex;align-items:center;">
+<input type="hidden" id="animal-add-photo-image">
+Upload image
+</label>
+<input id="file-upload" type="file"/>
+</div>
+</div>
+
+ <div data-role="none">
+         <input type="hidden" id="animal-add-photo-image" data-role="none">
+<!--          <label class="imagepicker replace"> -->
+            <input type='file' id="animal-add-photo-input" data-role="none">
+         </label>
       </div>
    </section>
+
+
+
+
+
+
+<section data-role="page" id="add-location-page">
+     <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Add Location</h1>
+    <ul>
+                <li><a href="#home-page">back</a></li>               
+                <li class="flex-stretch"></li>
+                <li><a href="#review-page" class="js-submit-animal-add">Save</a></li>
+            </ul>
+      </div>
+     </header>
+  
+      <div data-role="main">
+         <div class="map" id="container"></div>
+       </div>
+  <div id="pin">
+  </div>
+</div>
+
+
 
 
 
@@ -291,6 +334,22 @@
       <div data-role="main">
          <form id="animal-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
          </form>
+         <label for="file-upload" data-role="none" class="add-file" style="display:flex;align-items:center;">
+<input type="hidden" id="animal-add-photo-image">
+Upload image
+</label>
+<input id="file-upload" type="file"/>
+</div>
+</div>
+
+ <div data-role="none">
+         <input type="hidden" id="animal-add-photo-image" data-role="none">
+<!--          <label class="imagepicker replace"> -->
+            <input type='file' id="animal-add-photo-input" data-role="none">
+         </label>
+      </div>
+   </section>
+
       </div>
    </section>
 
@@ -365,7 +424,7 @@
          <ul>
             <li><a href="#home-page">Home</a></li>
             <li><a href="#recent-page">Recents</a></li>
-            <li><a href="#user-profile-page">Profile</a></li>
+            <li><a class="active" href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
 

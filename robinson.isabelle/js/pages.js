@@ -87,9 +87,9 @@ const AnimalProfilePage = async() => {
       params:[sessionStorage.animalId]
    })
    let [animal] = animals;
-   $(".animal-profile-top").css({"background-image":`url(${animal.img})`})
+   $("#animal-profile-page .animal-profile-top").css({"background-image":`url(${animal.img})`})
    $("#animal-profile-page h1").html(animal.name)
-   $(".animal-profile-description").html(makeAnimalProfileDescription(animal));
+   $("#animal-profile-page .animal-profile-description").html(makeAnimalProfileDescription(animal.description));
 
    let {result:locations} = await query({
       type:'locations_by_animal_id',

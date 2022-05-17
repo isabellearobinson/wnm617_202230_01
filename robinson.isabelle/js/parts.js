@@ -4,11 +4,6 @@ const makeAnimalList = templater(o=>`
 <li class="animal-list-item">
    <a href="#animal-profile-page" class="js-animal-jump" data-id="${o.id}">
       <div class="animal-list-image"><img src="${o.img}" alt=""></div>
-      <div class="animal-list-body">
-         <div class="animal-list-name">${o.name}</div>
-         <div class="animal-list-type">Type: ${o.type}</div>
-         <div class="animal-list-breed">Breed: ${o.breed}</div>
-      </div>
    </a>
 </li>
 `);
@@ -20,7 +15,6 @@ const makeUserProfilePage = o => `
 <div>
    <div><strong>Username</strong> @${o.username}</div>
    <div><strong>Email</strong> ${o.email}</div>
-   <a href="#user-settings-page">Settings</a>
 </div>
 `;
 
@@ -29,6 +23,7 @@ const makeAnimalProfileDescription = o => `
 <h2>${o.name}</h2>
 <div>${o.type}</div>
 <div>${o.breed}</div>
+<div>${o.description}</div>
 `;
 
 
@@ -69,7 +64,7 @@ ${FormControlInput({
    name:"name",
    displayname:"Name",
    type:"text",
-   placeholder:"Type a Name",
+   placeholder:"Add a Name",
    value:animal.name,
 })}
 ${FormControlInput({
@@ -77,7 +72,7 @@ ${FormControlInput({
    name:"type",
    displayname:"Type",
    type:"text",
-   placeholder:"Type a Type",
+   placeholder:"Add a Type",
    value:animal.type,
 })}
 ${FormControlInput({
@@ -85,14 +80,14 @@ ${FormControlInput({
    name:"breed",
    displayname:"Breed",
    type:"text",
-   placeholder:"Type a Breed",
+   placeholder:"Add a Breed",
    value:animal.breed,
 })}
 ${FormControlTextarea({
    namespace,
    name:"description",
    displayname:"Description",
-   placeholder:"Type a Description",
+   placeholder:"Add a Description",
    value:animal.description,
 })}
 `;
@@ -106,7 +101,7 @@ ${FormControlInput({
    name:"name",
    displayname:"Name",
    type:"text",
-   placeholder:"Type a Name",
+   placeholder:"Your Name",
    value:user.name,
 })}
 ${FormControlInput({
@@ -114,7 +109,7 @@ ${FormControlInput({
    name:"username",
    displayname:"Username",
    type:"text",
-   placeholder:"Type a Username",
+   placeholder:"Choose a Username",
    value:user.username,
 })}
 ${FormControlInput({
@@ -122,7 +117,7 @@ ${FormControlInput({
    name:"email",
    displayname:"Email",
    type:"text",
-   placeholder:"Type an Email",
+   placeholder:"Add Email",
    value:user.email,
 })}
 `;
