@@ -1,19 +1,27 @@
 
 
 
+
 const submitAnimalAdd = async () => {
    let name = $("#animal-add-name").val();
    let type = $("#animal-add-type").val();
    let breed = $("#animal-add-breed").val();
    let description = $("#animal-add-description").val();
-
+   let image = $("#animal-add-image-url").val();
 
    console.log({name,type,breed,description});
 
    if(name!="" && type!="" && breed!="" && description!="") {
       let {id,error} = await query({
          type: 'insert_animal',
-         params: [sessionStorage.userId,name,type,breed,description]
+         params: [
+            sessionStorage.userId,
+            name,
+            type,
+            breed,
+            description,
+            image==='' ? 'https://via.placeholder.com/400/?text=ANIMAL' : image
+         ]
       });
 
       if(error) throw(error);
@@ -97,6 +105,8 @@ const submitUserEdit = async () => {
 }
 
 
+
+
 const submitLocationAdd = async () => {
    let animal = $("#location-animal").val();
    let lat = $("#location-lat").val();
@@ -110,7 +120,7 @@ const submitLocationAdd = async () => {
 
    if(error) throw(error);
 
-   history.go(-2);
+   history.go(+$("#location-start").val());
 }
 
 

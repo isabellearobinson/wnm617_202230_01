@@ -20,10 +20,14 @@ $(() => {
          case "animal-edit-page": AnimalEditPage(); break;
          case "add-new-dog-page": AddNewDogPage(); break;
 
+          case "animal-add-photo-page": AnimalAddPhotoPage(); break;
+
+         case "choose-animal-page": ChooseAnimalPage(); break;
          case "choose-location-page": ChooseLocationPage(); break;
       }
    })
 
+      
 
 
 
@@ -33,9 +37,15 @@ $(() => {
       e.preventDefault();
       checkLoginForm();
    })
-   .on("submit", "#signup-form", function(e) {
+ .on("submit", "#signup-form", function(e) {
       e.preventDefault();
       submitUserSignup();
+   })
+
+  .on("submit", "#list-search-form", function(e) {
+      e.preventDefault();
+      let s = $(this).find("input").val();
+      checkSearchForm(s);
    })
 
 
@@ -56,6 +66,51 @@ $(() => {
       submitLocationAdd();
    })
 
+
+
+   .on("change", "#choose-animal-input select", function(e) {
+      $("#location-animal").val(this.value);
+   })
+
+
+   .on("change",".imagepicker input", function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         let filename = `uploads/${d.result}`;
+         $(this).parent().prev().val(filename)
+         $(this).parent().css({
+            "background-image":`url(${filename})`
+         }).addClass("picked");
+      })
+   })
+   .on("click", ".js-submit-user-upload", function(e) {
+      let image = $("#user-edit-photo-image").val();
+      query({
+         type: "update_user_image",
+         params: [image, sessionStorage.userId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+         history.go(-1);
+      })
+   })
+   .on("click", ".js-submit-animal-upload", function(e) {
+      let image = $("#animal-edit-photo-image").val();
+      query({
+         type: "update_animal_image",
+         params: [image, sessionStorage.animalId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+         history.go(-1);
+      })
+   })
+
+
+   .on("click", "[data-filter]", function(e) {
+      let {filter,value} = $(this).data();
+      if(value=="") ListPage();
+      else checkFilter(filter,value);
+   })
 
 
    // CLICKS

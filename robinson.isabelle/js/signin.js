@@ -19,7 +19,7 @@ const checkLoginForm = async() => {
       // not logged in
       console.log('failure');
       sessionStorage.removeItem('userId');
-   document.getElementById("wrongCredentials").innerHTML = "<p>Try again.</p>";
+   document.getElementById("wrongCredentials").innerHTML = "<H4>Try again.</H4>";
    }
 
    checkUserId();

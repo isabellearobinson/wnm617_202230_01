@@ -9,21 +9,28 @@ const makeAnimalList = templater(o=>`
 `);
 
 
+
 const makeUserProfilePage = o => `
-<img src="${o.img}">
-<h2>${o.name}</h2>
-<div>
-   <div><strong>Username</strong> @${o.username}</div>
-   <div><strong>Email</strong> ${o.email}</div>
+<div class="user-profile-head">
+   <img src="${o.img}">
+   <a href="#user-edit-photo-page" class="floater right"><img src="images/edit.png" class="icon"></a>
+</div>
+<div class="user-profile-body">
+   <h2>${o.name}</h2>
+   <div class="user-profile-description">
+      <div><strong>Username</strong> @${o.username}</div>
+      <div><strong>Email</strong> ${o.email}</div>
+   </div>
 </div>
 `;
 
 
+
 const makeAnimalProfileDescription = o => `
-<h2>${o.name}</h2>
-<div>${o.type}</div>
-<div>${o.breed}</div>
-<div>${o.description}</div>
+<h3>${o.name}</h3>
+<h2>${o.breed}</h2>
+<h5>${o.type}</h5>
+<p>${o.description}</p>
 `;
 
 
@@ -37,10 +44,10 @@ const makeAnimalPopupBody = o => `
       <h2>${o.name}</h2>
       <div>${o.type}</div>
       <div>${o.breed}</div>
+
    </div>
 </div>
 `;
-
 
 
 const FormControlInput = ({namespace,name,displayname,type,placeholder,value=""}) => {
@@ -53,6 +60,27 @@ const FormControlTextarea = ({namespace,name,displayname,placeholder,value=""}) 
    return `<div class="form-control">
       <label class="form-label" for="#${namespace}-${name}">${displayname}</label>
       <textarea data-role="none" class="form-input" placeholder="${placeholder}" id="${namespace}-${name}">${value}</textarea>
+   </div>`;
+}
+
+const SelectOptions = templater(o => `
+   <option value="${o.value}" ${o.selected?'selected':''}>${o.text}</option>
+`);
+const FormSelect = (options,namespace,name,value="") => {
+   return `
+   <div class="form-select">
+      <select id="${namespace}-${name}" data-role="none">
+         ${SelectOptions(options.map(o=>({
+            ...o,
+            ...(o.id==value && {selected: true})
+         })))}
+      </select>
+   </div>`;
+}
+const FormControlSelect = (options,namespace,name,displayname,value="") => {
+   return `<div class="form-control">
+      <label class="form-label" for="#${namespace}-${name}">${displayname}</label>
+      ${FormSelect(options,namespace,name,value)}
    </div>`;
 }
 
@@ -70,9 +98,9 @@ ${FormControlInput({
 ${FormControlInput({
    namespace,
    name:"type",
-   displayname:"Type",
+   displayname:"Animal Size",
    type:"text",
-   placeholder:"Add a Type",
+   placeholder:"Small, Medium, Large",
    value:animal.type,
 })}
 ${FormControlInput({

@@ -32,29 +32,32 @@ h1 {
 h2 {
   font-size:  16px;
   color: #bebebe;
-  margin-left: 25px;
 
 }
 
 h3 {
   font-size:  14px;
-  margin-left: 25px;
 
 }
 
 h4 {
-  font-size:  0.6em;
-  color: white;
+  font-size:  1em;
+  font-weight: bold;
+  color: red;
   text-align: center;
-  margin-top: 100px;
-  margin-left: 25px;
+
+}
+
+h5 {
+  font-size:  13px;
+  color: black;
+  text-align: center;
 
 }
 
 p {
   font-size: 12px;
   color: #515151;
-  margin-left: 25px;
 }
 
 a {
@@ -100,7 +103,9 @@ a:hover {
    height: 100%;
    width: 100%;
 }
-.noclick-children * { pointer-events:none; }
+.noclick-children * { pointer-events:none; 
+    margin-left: 15px;
+  }
 
 /* Forms */
 
@@ -154,6 +159,58 @@ a:hover {
 
 }
 
+
+
+.form-button2 {
+  display: inline-block;
+  width: 60%;
+  border-width: 0;
+  background-color: #F28D8D;
+  color: white;
+  font: inherit;
+  padding: 0.5em 1em;
+  margin: 0;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  align-items: center;
+
+}
+
+.go-profile-button {
+  display: inline-block;
+  width: 60%;
+  border-width: 0;
+  background-color: #F28D8D;
+  color: white;
+  font: inherit;
+  padding: 0.5em 1em;
+  margin: 0;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  align-items: center;
+
+}
+
+.location-button{
+  display: inline-block;
+  border-width: 0;
+  background-color: green;
+  color: white;
+  font: inherit;
+  padding: 0.5em 1em;
+  margin: 0;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  align-items: center;
+}
+
+
 .button2{
   display: inline-block;
   width: 100%;
@@ -175,7 +232,6 @@ a:hover {
 #signup-form
 #animal-add-form,
 #animal-edit-form,
-#search-form,
 #animal-edit-name,
 #animal-edit-name,
 #animal-edit-type,
@@ -187,7 +243,66 @@ a:hover {
   justify-content: center;
 }
 
+a.edit-user-button.ui-link {
+    color: white;
+    background: black;
+    text-align: center;
+    flex: 1 1 auto;
+    border-radius: 25px;
+    font-style: bold;
+    /* width: 100%; */
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
 
+a.edit-password-button.ui-link {
+    color: white;
+    background: black;
+    text-align: center;
+    flex: 1 1 auto;
+    border-radius: 25px;
+    font-style: bold;
+    /* width: 100%; */
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+        margin-left: -25px;
+}
+
+a.js-logout.ui-link {
+    color: white;
+    background: black;
+    text-align: center;
+    flex: 1 1 auto;
+    border-radius: 25px;
+    font-style: bold;
+    /* width: 100%; */
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+a.button2.ui-link {
+    margin-left: -150px;
+    align-items: center;
+    width: 250px;
+    margin-top: 200px;
+    background-color: green;
+    /* left: 50%; */
+    /* margin: 0; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* justify-content: center; */
+}
+
+
+#search-form {
+  padding: 1em;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+}
 
 /*Page layouts*/
 
@@ -264,6 +379,7 @@ a:hover {
    list-style-type: none;
    margin: 0;
    padding: 0;
+  justify-content: center;
 }
 
 .ui-header a,
@@ -278,24 +394,27 @@ a.active.ui-link {
 
 /* Animal List */
 .animal-list {
-   display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    gap: 6px;
     justify-content: center;
-    padding-bottom: 1rem;
-    align-items: center;
+    border-radius: 10px;
 }
+
 .animal-list-item a {
    display: flex;
     justify-content: center;
-    padding-bottom: 1rem;
     align-items: center;
 }
 .animal-list-item a:hover {
    text-decoration: none;
 }
 .animal-list-image img {
-   width: 6em;
-   vertical-align: text-bottom;
-}
+    width: 10em;
+    vertical-align: text-bottom;
+    border-radius: 8px;
+  }
+
 .animal-list-body {
    padding: 1em;
 }
@@ -303,17 +422,27 @@ a.active.ui-link {
    font-size: 1.3em;
 }
 
-
-
 #animal-profile-page [data-role="main"] {
    display: flex;
    flex-direction: column;
 }
 
-.animal-profile-top {
-    height: 40vh;
-    position: relative;
+
+#user-settings-page [data-role="main"] ul {
+   display: grid;
+   flex-direction: column;
+   gap: 30px;
+   justify-content: center;
 }
+
+.animal-profile-top {
+    height: 50%;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
 .animal-profile-bottom {
    flex: 1 1 auto;
    position: relative;
@@ -322,11 +451,28 @@ a.active.ui-link {
    height: var(--header-height);
    line-height: var(--header-height);
    display: flex;
+   width: 80%;
+    margin-top: 10px;
+
 }
+
+.animal-profile-nav div.active  {
+   color: white;
+   background: black;
+   text-align: center;
+   flex: 1 1 auto;
+   border-radius: 25px;
+   font-style: bold;
+    width: 100%;
+
+}
+
 .animal-profile-nav div {
    text-align: center;
    flex: 1 1 auto;
+    width: 100%;
 }
+
 .animal-profile-bottom>div {
    opacity: 0;
    pointer-events: none;
@@ -345,14 +491,24 @@ a.active.ui-link {
 
 /* User Profile */
 
+#user-profile-page [data-role="main"] {
+   position: relative;
+   justify-content: center;
+    margin-top: 20px;
+    display: flex;
+}
+
 .user-profile-head {
    position: relative;
 }
 .user-profile-head>img {
    width: 100%;
-   height: 40vh;
+   height: 100%;
    object-fit: cover;
    object-position: center;
+   border-radius: 50%;
+   position: relative;
+  border: 8px solid pink;
 }
 .user-profile-body {
    padding: 1em;
@@ -428,7 +584,6 @@ a.active.ui-link {
    display: flex;
    flex-direction: column;
    transition: all 0.3s;
-   box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
 .modal-drawer.left,
@@ -472,6 +627,29 @@ a.active.ui-link {
   transition: all 0.5s;
   transform: translate(-50%, -50%);
 }
+
+label.add-file {
+    margin-left: 15px;
+    font-style: bold;
+}
+
+.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset {
+    border-style: none;
+    color: pink;
+}
+
+.ui-input-text, .ui-input-search {
+    margin: 15px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/* floater */
+.floater { position: absolute; }
+.floater.top { top:1rem }
+.floater.right { right:1rem }
+.floater.bottom { bottom:1rem }
+.floater.left { left:1rem }
 
 
 /* Before midterm */
@@ -646,9 +824,42 @@ a.active.ui-link {
    width: 100%;
    height: 100%;
 }
-
 .map-placeholder {
-  background-image: url(../images/map.jpeg);
-  width: 100%;
-  height: 100%;
+   width: 100%;
+   height: 100%;
+    background-position: center;
+    background-size: cover;
 }
+
+
+.close-button {
+    float: right;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.imagepicker .replace {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+.choose-animal-input{
+  font-size: 16px;
+  padding: 20px 8px 20px 14px;
+  background: #fff;
+  border: 3px solid pink;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+

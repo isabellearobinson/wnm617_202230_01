@@ -98,6 +98,23 @@ function makeStatement($data) {
          ", $p);
 
 
+ case "search_animals":
+         $p = ["%$p[0]%", $p[1]];
+         return makeQuery($c,"SELECT *
+            FROM `animals`
+            WHERE
+               `name` LIKE ? AND
+               `user_id` = ?
+            ",$p);
+
+      case "filter_animals":
+         return makeQuery($c,"SELECT *
+            FROM `animals`
+            WHERE
+               `$p[0]` = ? AND
+               `user_id` = ?
+            ",[$p[1],$p[2]]);
+
 
 
       /* INSERT */
@@ -183,6 +200,26 @@ function makeStatement($data) {
          if(isset($r['error'])) return $r;
          return ["result"=>"Success"];
 
+
+      /* UPLOAD */
+
+      case "update_user_image":
+         $r = makeQuery($c,"UPDATE
+            `users`
+            SET `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "update_animal_image":
+         $r = makeQuery($c,"UPDATE
+            `animals`
+            SET `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
 
 
       /* DELETE */
