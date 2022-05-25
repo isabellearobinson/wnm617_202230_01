@@ -20,7 +20,7 @@ $(() => {
          case "animal-edit-page": AnimalEditPage(); break;
          case "add-new-dog-page": AddNewDogPage(); break;
 
-          case "animal-add-photo-page": AnimalAddPhotoPage(); break;
+          case "animal-edit-photo-page": AnimalEditPhotoPage(); break;
 
          case "choose-animal-page": ChooseAnimalPage(); break;
          case "choose-location-page": ChooseLocationPage(); break;
@@ -73,7 +73,7 @@ $(() => {
    })
 
 
-   .on("change",".imagepicker input", function(e){
+      .on("change",".imagepicker input", function(e){
       checkUpload(this.files[0])
       .then(d=>{
          console.log(d)
@@ -108,9 +108,10 @@ $(() => {
 
    .on("click", "[data-filter]", function(e) {
       let {filter,value} = $(this).data();
-      if(value=="") ListPage();
+      if(value=="") HomePage();
       else checkFilter(filter,value);
    })
+
 
 
    // CLICKS

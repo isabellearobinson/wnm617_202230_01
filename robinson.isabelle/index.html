@@ -5,6 +5,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>GoPup App</title>
 
+      <meta name="mobile-web-app-capable" content="yes"> 
+   <link rel="icon" sizes="192x192" href="icon1.png"> 
+
    <base href="/aau/wnm617/robinson.isabelle/">
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
@@ -37,17 +40,17 @@
 
 
   <div class="form-control">
-  <img class="image-splash" src="images/splash.png"/>
+  <img class="image-splash" src="images/newestsplash.png"/>
 
 
     <h1>Hello there, welcome to GoPup!</h1>
     <form id="login-form" class="form" data-ajax="false">
             <div class="form-control">
-               <label for="login-username" class="form-label">Username</label>
+               <label for="login-username" class="form-label-white">Username</label>
                <input type="text" id="login-username" data-role="none" class="form-input" placeholder="Type your Username">
             </div>
             <div class="form-control">
-               <label for="login-password" class="form-label">Password</label>
+               <label for="login-password" class="form-label-white">Password</label>
                <input type="password" id="login-password" data-role="none" class="form-input" placeholder="Type your Password">
             </div>
             <!-- <input type="submit" data-role="none"> -->
@@ -57,7 +60,7 @@
 
             <div id="wrongCredentials"></div>
 
-                <p class="login-form-text">Don't have a Login? <a href="#signup-page" class="signup-button" style="font-style:italic; font-weight: bold;">Create an Account</a></p>
+                <p class="login-form-text" style="color: white;">Don't have a Login? <a href="#signup-page" class="signup-button" style="font-style:italic; font-weight: bold; color: pink;">Create an Account</a></p>
             </form>
         </div>
     </section>
@@ -65,24 +68,28 @@
 
 
 
-   <section data-role="page" id="signup-page">
+   <section data-role="page" id="signup-page" style="background: black;">
       <div data-role="main" class="display-flex flex-column">
          <div class="flex-stretch"></div>
+
+          <div class="form-control">
+  <img class="image-splash" src="images/hello.png"/>
+
          <form id="signup-form" class="form" data-ajax="false">
             <div class="form-control">
-               <label for="signup-username" class="form-label">Username</label>
+               <label for="signup-username" class="form-label-white">Username</label>
                <input type="text" id="signup-username" data-role="none" class="form-input" placeholder="Type your Username">
             </div>
             <div class="form-control">
-               <label for="signup-email" class="form-label">Email</label>
+               <label for="signup-email" class="form-label-white">Email</label>
                <input type="email" id="signup-email" data-role="none" class="form-input" placeholder="Type your Email">
             </div>
             <div class="form-control">
-               <label for="signup-password" class="form-label">Password</label>
+               <label for="signup-password" class="form-label-white">Password</label>
                <input type="password" id="signup-password" data-role="none" class="form-input" placeholder="Type your Password">
             </div>
             <div class="form-control">
-               <label for="signup-password2" class="form-label">Confirm Password</label>
+               <label for="signup-password2" class="form-label-white">Confirm Password</label>
                <input type="password" id="signup-password2" data-role="none" class="form-input" placeholder="Type your Password again">
             </div>
             <!-- <input type="submit" data-role="none"> -->
@@ -91,7 +98,7 @@
                <!-- <a href="#recent-page" class="form-button">Sign Up</a> -->
             </div>
             <div class="form-control" style="text-align:center;font-size:0.8em;">
-               <p>Already have an account? <a href="#login-page" style="font-weight: bold;">Log In!</a></p>
+               <p style="color: white;">Already have an account? <a href="#login-page" style="font-weight: bold; color: pink;">Log In!</a></p>
             </div>
          </form>
          <div class="flex-stretch"></div>
@@ -105,7 +112,7 @@
 
    <section data-role="page" id="home-page" class="overscroll">
      <header data-role="header" class="navbar-header">
-    <h1 class="nav-page-top">Welcome back, Isabelle!</h1>
+    <h1 class="nav-page-top">Animals You've Tracked</h1>
       <ul>
                              
                 <li><a href="#"></a></li>
@@ -114,16 +121,17 @@
             </ul>
         </header>
         
+<div data-role="main" class="overscroll">
 
-     <div id="search-form">
-          <input type="text" placeholder="Search here" id="search-form-dog" data-role="none" class="form-input">
-            </div>
 
-         </form>
-        </div>
-      
-      <div data-role="main" class="overscroll">
-        <div><h3 style="margin-left: 25px;">Animals You've Tracked</h3></div>
+
+     <div class="search-bar header flex-none">
+      <form data-ajax="false" id="list-search-form" class="hotdog dark">
+       <input type="search" data-role="none" placeholder="Search animals here">
+     </form>
+         </div>
+         <div class="filter-bar header flex-none">
+         </div>
          <ul class="animal-list"></ul>
       </div>
 
@@ -228,7 +236,7 @@
          <div class="animal-profile-bottom">
             <div class="animal-profile-map active">
                <div class="map"></div>
-               <a href="#choose-location-page" class="button2">Drop New Pin</a>
+               <a href="#choose-location-page" class="button2 js-location-choose-animal">Drop New Pin</a>
             </div>
             <div class="animal-profile-description"></div>
          </div>
@@ -253,42 +261,20 @@
       <div data-role="main">
          <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
       
+<div style="padding:1em">
+            <input type="hidden" id="animal-add-image-url">
+            <label class="imagepicker imagepicker-replace thumbnail" id="animal-add-image-picker">
+               <input type='file' data-role="none">
+            </label>
+         </div>
 
-      <label for="file-upload" data-role="none" class="add-file" style="display:flex;align-items:center;">
-<input type="hidden" id="animal-add-photo-image">
-Upload image (Optional)
-</label>
-<input id="file-upload" type="file"/>
+<a href="#" class="form-button js-submit-animal-add">Add Animal</a>
+</form>
 </div>
-</div>
-<a href="#choose-location-page" class="location-button">Add Location</a>
       </div>
    </section>
 
 
-
-
-
-
-<section data-role="page" id="add-location-page">
-     <header data-role="header" class="navbar-header">
-    <h1 class="nav-page-top">Add Location</h1>
-    <ul>
-                <li><a href="#home-page">back</a></li>               
-                <li class="flex-stretch"></li>
-                <li><a href="#" class="js-submit-animal-add">Save</a></li>
-            </ul>
-      </div>
-     </header>
-  
-      <div data-role="main">
-         <div class="map" id="container"></div>
-       </div>
-  <div id="pin">
-  </div>
-</div>
-
-</section>
 
 
     <section data-role="page" id="animal-edit-page">
@@ -368,6 +354,7 @@ Upload image
       <header data-role="header" class="navbar-header">
     <h1 class="nav-page-top">Describe the Location</h1>
       <ul>               
+                <li><a href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#" class="js-submit-location-add">Save</a></li>
             </ul>
@@ -436,13 +423,14 @@ Upload image
             <li><a href="#" class="js-submit-animal-upload">Save</a></li>
          </ul>
       </header>
-            <div data-role="main">
+        <div data-role="main">
          <input type="hidden" id="animal-edit-photo-image">
          <label class="imagepicker replace">
             <input type='file' id="animal-edit-photo-input" data-role="none">
          </label>
       </div>
    </section>
+
 
 
 
@@ -478,11 +466,11 @@ Upload image
       </header>
       <div data-role="main">
          <form id="user-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
-         </form>
-         <div>
-               <button class="form-button" type="submit" class="js-submit-user-edit">Submit</button>
+        </form> 
+               <button class="form-button js-submit-user-edit" type="submit">Submit<a href="#"></button>
             </div>
-      </div>
+      
+    </div>
    </section>
 
    <section data-role="page" id="user-password-page">

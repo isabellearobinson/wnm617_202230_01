@@ -198,7 +198,7 @@ a:hover {
 .location-button{
   display: inline-block;
   border-width: 0;
-  background-color: green;
+  background-color: #68bb59;
   color: white;
   font: inherit;
   padding: 0.5em 1em;
@@ -288,7 +288,7 @@ a.button2.ui-link {
     align-items: center;
     width: 250px;
     margin-top: 200px;
-    background-color: green;
+    background-color: #68bb59;
     /* left: 50%; */
     /* margin: 0; */
     /* margin-left: auto; */
@@ -303,6 +303,70 @@ a.button2.ui-link {
   align-items: center;
   justify-content: center;
 }
+
+
+
+
+
+.hotdog {
+   background-color: white;
+   border-radius: 2em;
+   line-height: 3rem;
+   padding: 0 2em;
+}
+.hotdog input {
+   border-width: 0;
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   flex: 1 1 auto;
+   display: block;
+   font: inherit;
+   color: inherit;
+   outline: 0;
+   background-color: transparent;
+}
+.hotdog.dark {
+   background-color: var(--color-neutral-light);
+   color: white;
+}
+
+
+
+
+.recent-search {
+   margin: 1em;
+   display: flex;
+   position: relative;
+}
+.search-bar {
+   z-index: 2;
+   padding: 0.2em 1em;
+   display: flex;
+}
+.search-bar.header {
+   box-shadow:none;
+}
+.search-bar .hotdog {
+   width: 100%;
+   color: black;
+}
+.filter-bar {
+   z-index: 1;
+   display: flex;
+   padding: 0 1em;
+   gap: 2em;
+   font-weight: bold;
+   width: 100%;
+    padding-top: 10px;
+}
+
+
+.filter-bar.header {
+   overflow: auto;
+}
+
+
 
 /*Page layouts*/
 
@@ -341,7 +405,7 @@ a.button2.ui-link {
    height: var(--header-height);
    line-height: var(--header-height);
    border-width: 0;
-   background-color: #361B01;
+   background-color: black;
    color: white;
 
    position: relative;
@@ -349,16 +413,15 @@ a.button2.ui-link {
 }
 
 .ui-footer {
-   flex: none;
-   height: var(--header-height);
-   line-height: var(--header-height);
-   border-width: 0;
-   background-color: white;
-   color: black;
-   box-shadow: 0 0 5px rgba(0,0,0,0.15);
-
-   position: relative;
-   overflow: auto;
+    flex: none;
+    height: var(--header-height);
+    line-height: var(--header-height);
+    border-width: 0;
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 5px rgb(0 0 0 / 15%);
+    position: relative;
+    overflow: auto;
 }
 
 .ui-header .ui-title {
@@ -385,11 +448,12 @@ a.button2.ui-link {
 .ui-header a,
 .ui-footer a {
    display: block;
-   padding: 0 1em;
+   padding: 0 2em;
 }
 
 a.active.ui-link {
-    color: pink;
+    color: #F28D8D;
+        font-weight: bold;
 }
 
 /* Animal List */
@@ -399,6 +463,7 @@ a.active.ui-link {
     gap: 6px;
     justify-content: center;
     border-radius: 10px;
+    padding-left: 0px;
 }
 
 .animal-list-item a {
@@ -413,7 +478,9 @@ a.active.ui-link {
     width: 10em;
     vertical-align: text-bottom;
     border-radius: 8px;
-  }
+    height: 11em;
+    object-fit: cover;
+}
 
 .animal-list-body {
    padding: 1em;
@@ -502,14 +569,16 @@ a.active.ui-link {
    position: relative;
 }
 .user-profile-head>img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   object-position: center;
-   border-radius: 50%;
-   position: relative;
-  border: 8px solid pink;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    position: relative;
+    border: 8px solid #F28D8D;
+    object-fit: cover;
 }
+
 .user-profile-body {
    padding: 1em;
 }
@@ -801,10 +870,17 @@ label.add-file {
     background-repeat: no-repeat;
 }
 
-.image-splash{
-  max-width: 50%;
-  max-height: 50%;
-} 
+.image-splash {
+    /* max-width: 80%; */
+    /* max-height: 50%; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* margin: auto; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
 
 .community-dog1{
   width: 168px;
@@ -863,3 +939,74 @@ label.add-file {
   position: relative;
 }
 
+li.animal-list-item {
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+p.login-form-text {
+    text-align: center;
+        font-size: 14px;
+}
+
+section#login-page {
+    background: black;
+}
+
+.ui-mobile .form-label-white {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 0.5rem 0;
+}
+
+.ui-mobile .form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    margin: 0.5rem 0;
+}
+
+section#signup-page {
+    background: black;
+}
+
+
+.overscroll{
+  top: 10px;
+}
+
+.imagepicker.replace {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+input#animal-edit-photo-input {
+    font-family: poppins;
+    font-style: italic;
+}
+
+
+a.js-logout.ui-link {
+    color: white;
+    /* background: black; */
+    text-align: center;
+    flex: 1 1 auto;
+    border-radius: 25px;
+    /* width: 100%; */
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: grey;
+        font-weight: lighter;
+}

@@ -1,4 +1,3 @@
-
 const makeMap = async (target, center={ lat: 37.751917, lng: -122.447489 }) => {
    await checkData(()=>window.google);
 
@@ -82,9 +81,6 @@ const setMapBounds = (map_el,map_locs) => {
    }
 }
 
-
-
-
 const mapstyles = [
   
 {
@@ -92,7 +88,7 @@ const mapstyles = [
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#4e6d70"
+        "color": "#ffebee"
       }
     ]
   }

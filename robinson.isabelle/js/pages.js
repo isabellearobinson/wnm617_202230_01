@@ -93,7 +93,6 @@ const UserEditPhotoPage = async () => {
 }
 
 
-
 const AnimalProfilePage = async() => {
    let {result:animals} = await query({
       type:'animal_by_id',
@@ -112,11 +111,6 @@ const AnimalProfilePage = async() => {
 
    let map_el = await makeMap("#animal-profile-page .map");
    makeMarkers(map_el,locations)
-
-   $("#map-drawer")
-            .addClass("active")
-            .find(".modal-body")
-            .html(makeAnimalDeletePopupBody({...animal, id:animal.animal_id}))
 }
 
 const AnimalEditPage = async() => {
@@ -161,6 +155,7 @@ const ChooseLocationPage = async () => {
       makeMarkers(map_el,[e.latLng])
    })
 }
+
 
 
 const ChooseAnimalPage = async () => {

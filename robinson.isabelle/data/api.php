@@ -46,6 +46,20 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
    }
 }
 
+function makeUpload($file,$folder) {
+   $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+   if(@move_uploaded_file(
+      $_FILES[$file]['tmp_name'],
+      $folder.$filename
+   )) return ["result"=>$filename];
+   else return [
+      "error"=>"File Upload Failed",
+      "filename"=>$filename
+   ];
+}
+
+
 
 function makeStatement($data) {
    $c = makeConn();
@@ -61,7 +75,7 @@ function makeStatement($data) {
          return makeQuery($c, "SELECT * FROM `locations`", $p);
 
       case "user_by_id":
-         //return makeQuery($c, "SELECT * FROM `track_202230_users` WHERE `id` = ?", $p);
+         //return makeQuery($c, "SELECT * FROM `users` WHERE `id` = ?", $p);
          return makeQuery($c, "SELECT `id`,`name`,`email`,`img`,`username` FROM `users` WHERE `id` = ?", $p);
       case "animal_by_id":
          return makeQuery($c, "SELECT * FROM `animals` WHERE `id` = ?", $p);
@@ -133,12 +147,12 @@ function makeStatement($data) {
             ", $p, false);
          return ["id"=>$c->lastInsertId()];
 
-      case "insert_animal":
+         case "insert_animal":
          makeQuery($c,"INSERT INTO
             `animals`
             (`user_id`,`name`,`type`,`breed`,`description`,`img`,`date_create`)
             VALUES
-            (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
+            (?, ?, ?, ?, ?, ?, NOW())
             ", $p, false);
          return ["id"=>$c->lastInsertId()];
 
@@ -243,12 +257,16 @@ function makeStatement($data) {
 }
 
 
-
 /*
 "SELECT * FROM track_202230_users",
 "SELECT * FROM track_202230_users WHERE id = ?",
 "SELECT * FROM track_202230_animals WHERE user_id = ?",
 */
+
+if(!empty($_FILES)) {
+   $r = makeUpload("image","../uploads/");
+   die(json_encode($r));
+}
 
 $data = json_decode(file_get_contents("php://input"));
 

@@ -1,7 +1,6 @@
 
 
 
-
 const submitAnimalAdd = async () => {
    let name = $("#animal-add-name").val();
    let type = $("#animal-add-type").val();
@@ -20,7 +19,7 @@ const submitAnimalAdd = async () => {
             type,
             breed,
             description,
-            image==='' ? 'https://via.placeholder.com/400/?text=ANIMAL' : image
+            image==='' ? 'https://via.placeholder.com/400/?text=NEW PUP' : image
          ]
       });
 
