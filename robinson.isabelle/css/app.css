@@ -577,13 +577,11 @@ a.active.ui-link {
 #user-profile-page [data-role="main"] {
    position: relative;
    justify-content: center;
-    display: flex;
 }
 
 .user-profile-head {
-   position: relative;
-       padding-left: 12px;
-
+    position: relative;
+    padding: 5.5em;
 }
 
 .user-profile-head>img {
@@ -1041,4 +1039,8 @@ select#choose-animal-select {
     border-color: pink;
     /* color: black; */
     font-family: inherit;
+}
+
+.floater.right {
+    right: 6rem;
 }
