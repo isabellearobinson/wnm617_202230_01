@@ -227,6 +227,22 @@ a:hover {
   justify-content: center;
 }
 
+.form-button3 {
+  display: inline-block;
+  width: 60%;
+  border-width: 0;
+  background-color: #F28D8D;
+  color: white;
+  font: inherit;
+  padding: 0.5em 1em;
+  margin: 0;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  align-items: center;
+
+}
 
 #login-form,
 #signup-form
@@ -561,16 +577,18 @@ a.active.ui-link {
 #user-profile-page [data-role="main"] {
    position: relative;
    justify-content: center;
-    margin-top: 20px;
     display: flex;
 }
 
 .user-profile-head {
    position: relative;
+       padding-left: 12px;
+
 }
+
 .user-profile-head>img {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
@@ -1009,4 +1027,18 @@ a.js-logout.ui-link {
     padding-right: 40px;
     background-color: grey;
         font-weight: lighter;
+}
+
+select#choose-animal-select {
+    background-color: white;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 0.5em;
+    text-align: center;
+    align-content: center;
+    border-color: none;
+    border-width: 2px;
+    border-color: pink;
+    /* color: black; */
+    font-family: inherit;
 }
